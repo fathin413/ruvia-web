@@ -638,6 +638,28 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // --- Relokasi Hero Checkpoints Pills di Mobile ke Bawah Gambar Sofa ---
+  function syncHeroPillsPlacement() {
+    const pillsRow = document.getElementById('hero-pills-container');
+    const heroContent = document.querySelector('.hero-content');
+    const heroContainer = document.querySelector('.hero-container');
+    const heroImageWrap = document.querySelector('.hero-image-wrap');
+    if (!pillsRow || !heroContent || !heroContainer || !heroImageWrap) return;
+
+    if (window.innerWidth <= 960) {
+      if (pillsRow.parentElement !== heroContainer || pillsRow.previousElementSibling !== heroImageWrap) {
+        heroImageWrap.insertAdjacentElement('afterend', pillsRow);
+      }
+    } else {
+      if (pillsRow.parentElement !== heroContent) {
+        heroContent.appendChild(pillsRow);
+      }
+    }
+  }
+
+  syncHeroPillsPlacement();
+  window.addEventListener('resize', syncHeroPillsPlacement);
+
   // Backdrop light dismiss
   [reservationModal, productModal, promoModal].forEach(modal => {
     if (modal) {
