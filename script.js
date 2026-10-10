@@ -504,6 +504,26 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  function setupDialogBackdropClose(modal, onDismiss) {
+    if (!modal) return;
+    modal.addEventListener('click', (e) => {
+      const rect = modal.getBoundingClientRect();
+      const isInDialog = (rect.top <= e.clientY && e.clientY <= rect.top + rect.height
+        && rect.left <= e.clientX && e.clientX <= rect.left + rect.width);
+      if (!isInDialog) {
+        closeModal(modal);
+        if (typeof onDismiss === 'function') onDismiss();
+      }
+    });
+  }
+
+  if (reservationModal) {
+    setupDialogBackdropClose(reservationModal);
+  }
+  if (productModal) {
+    setupDialogBackdropClose(productModal);
+  }
+
   if (btnOpenRsvpHeader) {
     btnOpenRsvpHeader.addEventListener('click', () => openModal(reservationModal));
   }
@@ -529,7 +549,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Promo / Event Modal Controller
   if (promoModal) {
-    // Tampilkan promo pop-up secara otomatis setelah 2.5 detik jika belum pernah ditutup di sesi ini
+    // Backdrop click: klik di luar dialog otomatis menutup promo
+    setupDialogBackdropClose(promoModal, () => {
+      try { sessionStorage.setItem('ruvia_promo_dismissed', 'true'); } catch (e) {}
+    });
+
+    // Tampilkan promo pop-up secara otomatis setelah 2.2 detik jika belum pernah ditutup di sesi ini
     try {
       const hasDismissedPromo = sessionStorage.getItem('ruvia_promo_dismissed');
       if (!hasDismissedPromo) {
@@ -552,6 +577,12 @@ document.addEventListener('DOMContentLoaded', () => {
         try { sessionStorage.setItem('ruvia_promo_dismissed', 'true'); } catch (e) {}
       });
     }
+
+    // Escape key listener untuk promo modal
+    promoModal.addEventListener('cancel', () => {
+      document.body.style.overflow = '';
+      try { sessionStorage.setItem('ruvia_promo_dismissed', 'true'); } catch (e) {}
+    });
 
     if (btnClaimPromo) {
       btnClaimPromo.addEventListener('click', () => {

@@ -2144,71 +2144,107 @@ dialog.luxury-modal::backdrop {
    PROMO & EVENT POPUP STYLES (LIGHT THEME - AGENCY STANDARD)
    ========================================================================== */
 dialog.promo-modal {
-  max-width: 760px;
+  max-width: 840px;
+  width: min(94vw, 840px);
+  max-height: 90vh !important;
+  max-height: 90dvh !important;
   border-radius: var(--radius-lg);
-  overflow: hidden;
+  overflow-y: auto !important; /* WAJIB BISA DI-SCROLL */
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
   border: 1.5px solid rgba(30, 31, 171, 0.2);
+  box-shadow: 0 25px 60px rgba(15, 23, 42, 0.28);
+  background: #ffffff;
+  padding: 0;
+  margin: auto;
 }
 
 .promo-modal-content {
   position: relative;
   padding: 0;
+  min-height: 100%;
+}
+
+/* Tombol X Pop-Up Promo: Menonjol, Berkontras Tinggi, Selalu Terlihat & Mudah Diklik */
+.promo-modal .modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #ffffff !important;
+  border: 1.5px solid rgba(15, 23, 42, 0.15) !important;
+  color: #0f172a !important;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.22) !important;
+  z-index: 1000 !important; /* Pastikan selalu berada di atas semua konten dan gambar */
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.promo-modal .modal-close:hover {
+  background: #ef4444 !important;
+  color: #ffffff !important;
+  border-color: #ef4444 !important;
+  transform: scale(1.08);
+}
+
+.promo-modal .modal-close svg {
+  width: 22px;
+  height: 22px;
+  stroke-width: 2.5;
 }
 
 .promo-grid {
   display: grid;
   grid-template-columns: 1fr 1.25fr;
-  min-height: 480px;
+  min-height: 520px;
 }
 
+/* Sisi Visual Gambar: Latar Bersih, Tanpa Warna Hitam / Dark */
 .promo-visual-side {
   position: relative;
-  background-color: var(--blue-night);
+  background-color: #f8fafc; /* Latar bersih, NO BLACK CARD */
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem;
+  border-right: 1px solid var(--border-subtle);
 }
 
+/* Gambar Ukuran A4: Utuh 100%, Terbaca Jelas Tanpa Crop */
 .promo-img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: brightness(0.92);
-  transition: transform 0.6s ease;
+  height: auto;
+  max-height: 520px;
+  aspect-ratio: 1 / 1.414; /* Rasio A4 Portrait (210 x 297mm) */
+  object-fit: contain !important; /* Seluruh flyer/gambar terlihat utuh */
+  object-position: center;
+  border-radius: var(--radius-sm);
+  background: #ffffff;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.07);
+  transition: transform 0.4s ease;
 }
 
 .promo-visual-side:hover .promo-img {
-  transform: scale(1.05);
+  transform: scale(1.02);
 }
 
+/* Hapus Card Hitam yang Menutupi Gambar */
 .promo-visual-badge {
-  position: absolute;
-  bottom: 1.5rem;
-  left: 1.5rem;
-  right: 1.5rem;
-  background: rgba(15, 23, 42, 0.88);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(248, 195, 32, 0.4);
-  border-radius: var(--radius-md);
-  padding: 1rem 1.25rem;
-  color: #ffffff;
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  display: none !important;
 }
 
 .promo-badge-tag {
-  font-size: 0.725rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--yellow-primary);
+  display: none !important;
 }
 
 .promo-discount-num {
-  font-size: 1.35rem;
-  font-weight: 800;
-  color: #ffffff;
+  display: none !important;
 }
 
 .promo-info-side {
@@ -2624,6 +2660,62 @@ dialog.promo-modal {
     font-size: clamp(0.72rem, 2.95vw, 0.8rem) !important;
     padding: 0.6rem 0.65rem !important;
     white-space: nowrap !important;
+  }
+
+  /* --- Pop-Up Promo Mobile Responsive & Scrollable --- */
+  dialog.promo-modal {
+    width: 92vw !important;
+    max-height: 88vh !important;
+    max-height: 88dvh !important;
+    border-radius: 18px !important;
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+
+  .promo-grid {
+    grid-template-columns: 1fr !important;
+    display: flex !important;
+    flex-direction: column !important;
+    min-height: auto !important;
+  }
+
+  .promo-visual-side {
+    width: 100% !important;
+    max-height: 380px !important;
+    min-height: 220px !important;
+    padding: 0.85rem !important;
+    border-right: none !important;
+    border-bottom: 1px solid var(--border-subtle) !important;
+    background: #f1f5f9 !important;
+  }
+
+  .promo-img {
+    max-height: 350px !important;
+    width: auto !important;
+    max-width: 100% !important;
+    aspect-ratio: 1 / 1.414 !important; /* Format A4 Portrait */
+    object-fit: contain !important;
+    margin: 0 auto !important;
+    display: block !important;
+  }
+
+  .promo-info-side {
+    padding: 1.35rem 1.15rem 1.75rem !important;
+  }
+
+  /* Sticky Close Button: Tetap terlihat di pojok kanan atas saat mobile discroll */
+  .promo-modal .modal-close {
+    position: sticky !important;
+    top: 0.65rem !important;
+    margin-left: auto !important;
+    margin-right: 0.65rem !important;
+    margin-top: 0.65rem !important;
+    margin-bottom: -48px !important;
+    z-index: 1000 !important;
+    width: 38px !important;
+    height: 38px !important;
+    background: #ffffff !important;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.22) !important;
   }
 }
 
