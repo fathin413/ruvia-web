@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kontak &amp; Showroom &bull; Admin Ruvia Furniture Makassar</title>
+  <meta name="robots" content="noindex, nofollow">
+  <!-- Google Fonts: Poppins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="admin.css">
+  <link rel="stylesheet" href="/admin/admin.css">
+</head>
+<body>
+
+  <!-- ADMIN TOPBAR (Loaded from admin/header.html) -->
+  <div id="admin-header-placeholder"></div>
+
+  <!-- ADMIN MAIN LAYOUT -->
+  <div class="admin-layout">
+    <!-- ADMIN SIDEBAR (Loaded from admin/sidebar.html) -->
+    <div id="admin-sidebar-placeholder"></div>
+
+    <!-- MAIN CONTENT AREA -->
+    <main class="admin-content-area">
+      <section class="tab-panel active" id="tab-store" style="display: block;">
+        <div class="panel-header">
+          <h1 class="panel-title">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            <span>Pengaturan Kontak &amp; Showroom</span>
+          </h1>
+          <p class="panel-subtitle">Kelola nomor WhatsApp pemesanan, alamat cabang, dan jam operasional showroom.</p>
+        </div>
+
+        <div class="admin-card">
+          <div class="card-title-row">
+            <div>
+              <h2 class="card-title">Nomor WhatsApp Lead Generation</h2>
+              <p class="card-desc">Semua tombol konsultasi dan pemesanan di website akan otomatis mengarah ke nomor ini.</p>
+            </div>
+          </div>
+
+          <div class="form-row-2">
+            <div class="form-group">
+              <label class="form-label" for="store-wa-raw">Nomor WhatsApp API (Format 62xxx tanpa +):</label>
+              <input type="text" id="store-wa-raw" class="form-input" placeholder="628114500888">
+              <p class="form-hint">Digunakan untuk link wa.me/...</p>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="store-wa-disp">Nomor WhatsApp Tampilan (Display):</label>
+              <input type="text" id="store-wa-disp" class="form-input" placeholder="+62 811-4500-888">
+              <p class="form-hint">Ditampilkan pada footer dan halaman kontak.</p>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="store-address">Alamat Showroom Makassar:</label>
+            <input type="text" id="store-address" class="form-input" placeholder="Jl. Gunung Latimojong No.78, Lariang Bangi, Kec. Makassar, Kota Makassar, Sulawesi Selatan 90224">
+          </div>
+
+          <div class="form-row-2">
+            <div class="form-group">
+              <label class="form-label" for="store-hours">Jam Operasional Showroom:</label>
+              <input type="text" id="store-hours" class="form-input" placeholder="Setiap Hari: 08.00 - 18.00 WITA">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="store-email">Email Resmi:</label>
+              <input type="email" id="store-email" class="form-input" placeholder="halo@ruviafurniture.com">
+            </div>
+          </div>
+
+          <div style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid var(--admin-gray-200); display: flex; justify-content: flex-end;">
+            <button type="button" class="btn-adm btn-adm-primary" onclick="document.getElementById('btn-save-all').click();">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path><polyline points="17 21 17 13 7 13 7 21"></polyline><polyline points="7 3 7 8 15 8"></polyline></svg>
+              <span>Simpan Kontak &amp; Showroom</span>
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- TOAST NOTIFICATION -->
+  <div class="toast-notice" id="admin-toast">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f8c320" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+    <span id="toast-message">Data berhasil disimpan!</span>
+  </div>
+
+  <script src="admin.js"></script>
+</body>
+</html>

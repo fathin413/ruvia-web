@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Katalog &amp; Produk &bull; Admin Ruvia Furniture Makassar</title>
+  <meta name="robots" content="noindex, nofollow">
+  <!-- Google Fonts: Poppins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="admin.css">
+  <link rel="stylesheet" href="/admin/admin.css">
+</head>
+<body>
+
+  <!-- ADMIN TOPBAR (Loaded from admin/header.html) -->
+  <div id="admin-header-placeholder"></div>
+
+  <!-- ADMIN MAIN LAYOUT -->
+  <div class="admin-layout">
+    <!-- ADMIN SIDEBAR (Loaded from admin/sidebar.html) -->
+    <div id="admin-sidebar-placeholder"></div>
+
+    <!-- MAIN CONTENT AREA -->
+    <main class="admin-content-area">
+      <section class="tab-panel active" id="tab-products" style="display: block;">
+        <div class="panel-header" style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
+          <div>
+            <h1 class="panel-title">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+              <span>Katalog &amp; Produk</span>
+            </h1>
+            <p class="panel-subtitle">Tambah, edit, dan kelola model sofa minimalis dan furnitur kekinian di lookbook digital.</p>
+          </div>
+          <button type="button" class="btn-adm btn-adm-primary" id="btn-add-product">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+            <span>Tambah Produk Baru</span>
+          </button>
+        </div>
+
+        <div class="products-grid" id="admin-products-list">
+          <!-- Rendered via JavaScript -->
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- MODAL: EDIT / TAMBAH PRODUK -->
+  <div class="admin-modal-overlay" id="product-modal-overlay">
+    <div class="admin-modal-card">
+      <div class="modal-header-row">
+        <h3 class="modal-title-text" id="product-modal-title">Edit Produk</h3>
+        <button type="button" class="modal-close-btn" id="btn-close-prod-modal" aria-label="Tutup">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+      </div>
+
+      <form id="product-form">
+        <input type="hidden" id="prod-id">
+
+        <div class="form-row-2">
+          <div class="form-group">
+            <label class="form-label" for="prod-name">Nama Model Produk:</label>
+            <input type="text" id="prod-name" class="form-input" required placeholder="Misal: Aurelia Curved Minimalist Sofa">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="prod-category">Kategori:</label>
+            <select id="prod-category" class="form-select" required>
+              <option value="Sofa & Ruang Tamu|living">Sofa & Ruang Tamu (Living)</option>
+              <option value="Set Meja Makan|dining">Set Meja Makan (Dining)</option>
+              <option value="Tempat Tidur|bedroom">Tempat Tidur (Bedroom)</option>
+              <option value="Credenza & Lemari|storage">Credenza & Lemari (Storage)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row-2">
+          <div class="form-group">
+            <label class="form-label" for="prod-badge">Badge Label:</label>
+            <input type="text" id="prod-badge" class="form-input" placeholder="Misal: Bestseller Kekinian">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="prod-price">Estimasi Harga:</label>
+            <input type="text" id="prod-price" class="form-input" placeholder="Misal: Mulai Rp 3.800.000">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="prod-image">Path Foto Produk:</label>
+          <input type="text" id="prod-image" class="form-input" required placeholder="../assets/images/catalog-sofa.jpg">
+          <p class="form-hint">Gunakan foto di folder ../assets/images/ (sofa, dining, bedroom, credenza).</p>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="prod-desc">Deskripsi Produk:</label>
+          <textarea id="prod-desc" class="form-textarea" required placeholder="Jelaskan kenyamanan, gaya minimalis, dan keunggulannya..."></textarea>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="prod-watext">Template Pesan WhatsApp:</label>
+          <input type="text" id="prod-watext" class="form-input" placeholder="Halo ruvia Makassar, saya ingin tanya harga...">
+        </div>
+
+        <div style="display: flex; justify-content: flex-end; gap: 0.75rem; margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid var(--admin-gray-200);">
+          <button type="button" class="btn-adm btn-adm-outline" id="btn-cancel-prod">Batal</button>
+          <button type="submit" class="btn-adm btn-adm-primary">Simpan Produk</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION -->
+  <div class="toast-notice" id="admin-toast">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f8c320" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+    <span id="toast-message">Data berhasil disimpan!</span>
+  </div>
+
+  <script src="admin.js"></script>
+</body>
+</html>

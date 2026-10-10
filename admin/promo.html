@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kelola Pop-Up Promo &amp; Diskon &bull; Admin Ruvia Furniture Makassar</title>
+  <meta name="robots" content="noindex, nofollow">
+  <!-- Google Fonts: Poppins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="admin.css">
+  <link rel="stylesheet" href="/admin/admin.css">
+</head>
+<body>
+
+  <!-- ADMIN TOPBAR (Loaded from admin/header.html) -->
+  <div id="admin-header-placeholder"></div>
+
+  <!-- ADMIN MAIN LAYOUT -->
+  <div class="admin-layout">
+    <!-- ADMIN SIDEBAR (Loaded from admin/sidebar.html) -->
+    <div id="admin-sidebar-placeholder"></div>
+
+    <!-- MAIN CONTENT AREA -->
+    <main class="admin-content-area">
+      <section class="tab-panel active" id="tab-promo" style="display: block;">
+        <div class="panel-header">
+          <h1 class="panel-title">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+            <span>Kelola Pop-Up Promo &amp; Event</span>
+          </h1>
+          <p class="panel-subtitle">
+            Atur isi jendela penawaran spesial / diskon yang otomatis muncul saat pengunjung membuka website.
+          </p>
+        </div>
+
+        <div class="admin-card">
+          <div class="card-title-row">
+            <div>
+              <h2 class="card-title">Pengaturan Promo Pop-Up</h2>
+              <p class="card-desc">Teks penawaran, persentase diskon, dan kuota urgency.</p>
+            </div>
+            <div>
+              <label style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.85rem; font-weight: 700; cursor: pointer;">
+                <input type="checkbox" id="promo-active-toggle" checked style="width: 18px; height: 18px; accent-color: var(--admin-blue-primary);">
+                <span>Aktifkan Pop-Up Otomatis</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="form-row-2">
+            <div class="form-group">
+              <label class="form-label" for="promo-top-badge">Badge Atas:</label>
+              <input type="text" id="promo-top-badge" class="form-input" placeholder="Promo Hunian Baru • Kuota Terbatas">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="promo-badge-tag">Tag Visual Foto:</label>
+              <input type="text" id="promo-badge-tag" class="form-input" placeholder="Flash Event Makassar">
+            </div>
+          </div>
+
+          <div class="form-row-2">
+            <div class="form-group">
+              <label class="form-label" for="promo-discount-num">Angka Diskon (Besar):</label>
+              <input type="text" id="promo-discount-num" class="form-input" placeholder="Hemat s/d 25%" style="font-weight: 700;">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="promo-urgency">Teks Urgency Kuota:</label>
+              <input type="text" id="promo-urgency" class="form-input" placeholder="Kuota diskon khusus 20 pemesan pertama via WhatsApp!">
+            </div>
+          </div>
+
+          <div class="form-row-2">
+            <div class="form-group">
+              <label class="form-label" for="promo-title-prefix">Awalan Judul Promo:</label>
+              <input type="text" id="promo-title-prefix" class="form-input" placeholder="Spesial Bulan Ini: ">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="promo-title-highlight">Sorotan Judul:</label>
+              <input type="text" id="promo-title-highlight" class="form-input" placeholder="Diskon Furnitur Kekinian & Sofa Minimalis">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="promo-desc">Deskripsi Promo Singkat:</label>
+            <textarea id="promo-desc" class="form-textarea" placeholder="Dapatkan penawaran harga terbaik untuk pemesanan sofa minimalis..."></textarea>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">3 Poin Benefit Promo (Perks List):</label>
+            <input type="text" id="promo-perk-1" class="form-input" style="margin-bottom: 0.5rem;" placeholder="Potongan Harga Spesial s/d 25% paket ruang tamu kekinian">
+            <input type="text" id="promo-perk-2" class="form-input" style="margin-bottom: 0.5rem;" placeholder="Gratis Antar & Rakit Rapi ke seluruh area Makassar">
+            <input type="text" id="promo-perk-3" class="form-input" placeholder="Garansi Rangka & Busa untuk kenyamanan jangka panjang">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="promo-watext">Template Pesan WhatsApp saat Klaim Promo:</label>
+            <input type="text" id="promo-watext" class="form-input" placeholder="Halo ruvia Makassar, saya ingin klaim Promo Diskon Spesial s/d 25%...">
+          </div>
+
+          <div style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid var(--admin-gray-200); display: flex; justify-content: flex-end;">
+            <button type="button" class="btn-adm btn-adm-primary" onclick="document.getElementById('btn-save-all').click();">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path><polyline points="17 21 17 13 7 13 7 21"></polyline><polyline points="7 3 7 8 15 8"></polyline></svg>
+              <span>Simpan Pengaturan Promo</span>
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- TOAST NOTIFICATION -->
+  <div class="toast-notice" id="admin-toast">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f8c320" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+    <span id="toast-message">Data berhasil disimpan!</span>
+  </div>
+
+  <script src="admin.js"></script>
+</body>
+</html>

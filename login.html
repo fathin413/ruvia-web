@@ -1,0 +1,1139 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portal Member: Pendaftaran &amp; Login | ruvia Furniture Makassar</title>
+  <meta name="description" content="Pendaftaran akun member baru dan login keanggotaan ruvia Privilege Makassar. Akses kartu digital, klaim diskon eksklusif dan voucher belanja furnitur kekinian.">
+  <meta name="keywords" content="login member ruvia, daftar member ruvia, akun member furniture makassar, promo furniture makassar">
+  
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Portal Member: Pendaftaran &amp; Login | ruvia Furniture Makassar">
+  <meta property="og:description" content="Daftar akun member baru atau login keanggotaan ruvia Privilege Makassar. Nikmati diskon eksklusif dan voucher belanja furnitur.">
+  <meta property="og:image" content="assets/images/ruvia-logo.png">
+  <meta name="theme-color" content="#002b54">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/images/ruvia-logo.png">
+  
+  <!-- Google Fonts: Poppins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FurnitureStore",
+    "name": "ruvia Furniture Makassar",
+    "image": "assets/images/ruvia-logo.png",
+    "description": "Program keanggotaan loyalitas pelanggan ruvia Furniture Makassar dengan berbagai keuntungan diskon eksklusif dan voucher hadiah.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Jl. Gunung Latimojong No.78, Lariang Bangi, Kec. Makassar",
+      "addressLocality": "Makassar",
+      "addressRegion": "Sulawesi Selatan",
+      "postalCode": "90224",
+      "addressCountry": "ID"
+    },
+    "openingHours": "Mo-Su 08:00-18:00",
+    "telephone": "+628114500888",
+    "hasMap": "https://share.google/Jd3qGqJP3vN8w0Hi9",
+    "priceRange": "$$"
+  }
+  </script>
+</head>
+<body>
+
+  <!-- ==========================================================================
+       HEADER & NAVIGASI (Modular Component: components/navbar.html)
+       ========================================================================== -->
+  <div id="navbar-placeholder"></div>
+
+  <main id="main-content" style="padding-top: 85px;">
+    <!-- ==========================================================================
+         HERO SECTION: DAFTAR MEMBER PRIVILEGE
+         ========================================================================== -->
+    <section class="member-section" id="membership-area" aria-labelledby="member-heading">
+      <div class="container">
+        <!-- Section Header -->
+        <div style="text-align: center; max-width: 760px; margin: 0 auto 2rem;">
+          <h1 class="section-title light-mode" id="member-heading" style="font-size: clamp(2rem, 3.8vw, 2.75rem); line-height: 1.25; margin-bottom: 1rem;">
+            Pendaftaran &amp; Login <span class="brand-yellow-highlight" style="color: var(--blue-primary); text-decoration: underline; text-decoration-color: var(--yellow-primary); text-underline-offset: 6px;">ruvia Privilege</span>
+          </h1>
+          <p class="section-desc light-mode" style="margin: 0 auto 1.25rem; font-size: 1rem;">
+            Daftar akun anggota baru untuk aktivasi Kartu Digital instan atau masuk ke akun Anda untuk melihat status poin dan klaim voucher diskon eksklusif.
+          </p>
+          <a href="member.html" style="display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.92rem; font-weight: 600; color: var(--blue-primary); text-decoration: underline;">
+            &larr; Pelajari Keuntungan Lengkap Program ruvia Privilege
+          </a>
+        </div>
+
+        <div class="member-grid">
+          <!-- ==================================================================
+               KOLOM KIRI: DIGITAL CARD PREVIEW & KEUNTUNGAN MEMBER
+               ================================================================== -->
+          <div>
+            <!-- Live Reactive Virtual Member Card -->
+            <div class="digital-card-preview-wrap">
+              <div class="digital-member-card" id="digital-card-el" title="Kartu Member Digital ruvia Privilege">
+                <div class="card-top-row">
+                  <div class="card-brand">
+                    <img src="assets/images/ruvia-logo.png" alt="ruvia" style="width: 32px; height: 32px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.4);">
+                    <div class="card-brand-name">ruvia<span>.</span></div>
+                  </div>
+                  <div class="card-tier-badge">Gold Privilege</div>
+                </div>
+
+                <div class="card-chip-row">
+                  <div class="card-chip-sim"></div>
+                  <svg class="card-nfc-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M4 8a12 12 0 0 1 16 0"></path>
+                    <path d="M7 11a8 8 0 0 1 10 0"></path>
+                    <path d="M10 14a4 4 0 0 1 4 0"></path>
+                  </svg>
+                </div>
+
+                <div class="card-bottom-row">
+                  <div>
+                    <div class="card-holder-label">Nama Anggota</div>
+                    <div class="card-holder-name" id="card-preview-name">NAMA LENGKAP ANDA</div>
+                  </div>
+                  <div class="card-number-block">
+                    <div class="card-holder-label" style="text-align: right;">ID Member</div>
+                    <div class="card-id-num" id="card-preview-id">RUV-2026-XXXX</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- List of 5 Exclusive Privileges -->
+            <div class="privilege-perks-card">
+              <div class="perks-title">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--blue-primary)" stroke-width="2.2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                <span>5 Keuntungan Eksklusif Member:</span>
+              </div>
+
+              <div class="perks-list">
+                <div class="perk-item">
+                  <div class="perk-icon-wrap">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line></svg>
+                  </div>
+                  <div class="perk-info">
+                    <h4>Diskon Ekstra Tambahan</h4>
+                    <p>Potongan langsung s/d 10% untuk setiap pemesanan sofa minimalis & set meja makan, bisa digabung promo toko.</p>
+                  </div>
+                </div>
+
+                <div class="perk-item">
+                  <div class="perk-icon-wrap">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="3" y="8" width="18" height="13" rx="2"></rect><path d="M12 8v13"></path><path d="M19 12H5"></path><path d="M7.5 8a2.5 2.5 0 0 1 0-5A4.5 4.5 0 0 1 12 7.5 4.5 4.5 0 0 1 16.5 3a2.5 2.5 0 0 1 0 5"></path></svg>
+                  </div>
+                  <div class="perk-info">
+                    <h4>Voucher Spesial Ulang Tahun</h4>
+                    <p>Kejutan voucher belanja eksklusif senilai ratusan ribu rupiah dikirim langsung di bulan ulang tahun Anda.</p>
+                  </div>
+                </div>
+
+                <div class="perk-item">
+                  <div class="perk-icon-wrap">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+                  </div>
+                  <div class="perk-info">
+                    <h4>Prioritas Pengiriman & Rakit Gratis</h4>
+                    <p>Jadwal perakitan diutamakan tanpa antre untuk seluruh wilayah Kota Makassar & sekitarnya.</p>
+                  </div>
+                </div>
+
+                <div class="perk-item">
+                  <div class="perk-icon-wrap">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                  </div>
+                  <div class="perk-info">
+                    <h4>Akses Koleksi Baru Lebih Awal</h4>
+                    <p>Undangan preview peluncuran model sofa kekinian & furnitur estetik sebelum dirilis ke publik umum.</p>
+                  </div>
+                </div>
+
+                <div class="perk-item">
+                  <div class="perk-icon-wrap">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+                  </div>
+                  <div class="perk-info">
+                    <h4>Konsultasi Custom Ukuran Bebas Biaya</h4>
+                    <p>Bebas konsultasi denah ruangan, pencocokan warna bahan busa & kain dengan konsultan interior ruvia.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ==================================================================
+               KOLOM KANAN: DUAL TAB (DAFTAR AKUN MEMBER & LOGIN MEMBER)
+               ================================================================== -->
+          <div>
+            <div class="member-form-card">
+              <!-- Tab Switcher -->
+              <div class="auth-tab-switch" id="auth-tab-container" role="tablist" aria-label="Pilihan Akses Member">
+                <button type="button" class="auth-tab-btn active" id="tab-btn-register" role="tab" aria-selected="true" aria-controls="panel-register-account">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><line x1="20" y1="8" x2="20" y2="14"></line><line x1="23" y1="11" x2="17" y2="11"></line></svg>
+                  <span>Daftar Akun Baru</span>
+                </button>
+                <button type="button" class="auth-tab-btn" id="tab-btn-login" role="tab" aria-selected="false" aria-controls="panel-login-account">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path><polyline points="10 17 15 12 10 7"></polyline><line x1="15" y1="12" x2="3" y2="12"></line></svg>
+                  <span>Masuk Akun Member</span>
+                </button>
+              </div>
+
+              <!-- ==============================================================
+                   PANEL 1: FORMULIR PENDAFTARAN AKUN MEMBER
+                   ============================================================== -->
+              <div id="panel-register-account">
+                <h2 class="form-header-title">Daftar Akun ruvia Privilege</h2>
+                <p class="form-header-desc">
+                  Lengkapi data diri dan buat kata sandi untuk mengaktifkan kartu digital serta keuntungan khusus member Anda.
+                </p>
+
+                <!-- Inline Error Banner Register -->
+                <div id="register-error-msg" style="display: none; background: #fee2e2; border: 1.5px solid #ef4444; color: #b91c1c; padding: 0.85rem 1rem; border-radius: var(--radius-sm); font-size: 0.875rem; margin-bottom: 1.25rem;">
+                  <div style="display: flex; align-items: flex-start; gap: 0.6rem;">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" style="flex-shrink: 0; margin-top: 1px;"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+                    <div id="register-error-text">Terjadi kendala saat mendaftar.</div>
+                  </div>
+                </div>
+
+                <form id="form-register-member" novalidate>
+                  <!-- Nama Lengkap -->
+                  <div class="member-form-group">
+                    <label class="member-form-label" for="mbr-name">
+                      Nama Lengkap <span class="req">*</span>
+                    </label>
+                    <input type="text" id="mbr-name" class="member-form-input" required placeholder="Contoh: Rahmat Hidayat" autocomplete="name">
+                  </div>
+
+                  <!-- WhatsApp & Email -->
+                  <div class="form-row-2">
+                    <div class="member-form-group">
+                      <label class="member-form-label" for="mbr-wa">
+                        No. WhatsApp (ID Login) <span class="req">*</span>
+                      </label>
+                      <input type="tel" id="mbr-wa" class="member-form-input" required placeholder="Contoh: 087712345678" autocomplete="tel">
+                    </div>
+                    <div class="member-form-group">
+                      <label class="member-form-label" for="mbr-email">
+                        Alamat Email (Opsional)
+                      </label>
+                      <input type="email" id="mbr-email" class="member-form-input" placeholder="contoh@gmail.com" autocomplete="email">
+                    </div>
+                  </div>
+
+                  <!-- Buat Kata Sandi & Konfirmasi -->
+                  <div class="form-row-2">
+                    <div class="member-form-group">
+                      <label class="member-form-label" for="mbr-pass">
+                        Buat Kata Sandi <span class="req">*</span>
+                      </label>
+                      <div class="password-input-wrap">
+                        <input type="password" id="mbr-pass" class="member-form-input" required placeholder="Minimal 8 karakter" minlength="8" autocomplete="new-password">
+                        <button type="button" class="btn-toggle-pwd" data-target="mbr-pass" aria-label="Lihat Kata Sandi">
+                          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="member-form-group">
+                      <label class="member-form-label" for="mbr-pass-confirm">
+                        Konfirmasi Kata Sandi <span class="req">*</span>
+                      </label>
+                      <div class="password-input-wrap">
+                        <input type="password" id="mbr-pass-confirm" class="member-form-input" required placeholder="Ulangi kata sandi" autocomplete="new-password">
+                        <button type="button" class="btn-toggle-pwd" data-target="mbr-pass-confirm" aria-label="Lihat Kata Sandi">
+                          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Tanggal Lahir & Domisili -->
+                  <div class="form-row-2">
+                    <div class="member-form-group">
+                      <label class="member-form-label" for="mbr-dob">
+                        Tanggal Lahir (Untuk Hadiah Ultah)
+                      </label>
+                      <input type="date" id="mbr-dob" class="member-form-input">
+                    </div>
+                    <div class="member-form-group">
+                      <label class="member-form-label" for="mbr-city">
+                        Wilayah Domisili <span class="req">*</span>
+                      </label>
+                      <select id="mbr-city" class="member-form-select" required>
+                        <option value="Makassar (Rappocini)">Makassar - Rappocini</option>
+                        <option value="Makassar (Panakkukang)">Makassar - Panakkukang</option>
+                        <option value="Makassar (Tamalate)">Makassar - Tamalate</option>
+                        <option value="Makassar (Ujung Pandang)">Makassar - Ujung Pandang</option>
+                        <option value="Makassar (Biringkanaya)">Makassar - Biringkanaya</option>
+                        <option value="Makassar (Tamalanrea)">Makassar - Tamalanrea</option>
+                        <option value="Makassar (Manggala)">Makassar - Manggala</option>
+                        <option value="Makassar (Mariso)">Makassar - Mariso</option>
+                        <option value="Makassar (Mamajang)">Makassar - Mamajang</option>
+                        <option value="Makassar (Wajo)">Makassar - Wajo</option>
+                        <option value="Makassar (Bontoala)">Makassar - Bontoala</option>
+                        <option value="Makassar (Tallo)">Makassar - Tallo</option>
+                        <option value="Kab. Gowa">Kab. Gowa (Sungguminasa & sekitarnya)</option>
+                        <option value="Kab. Maros">Kab. Maros & sekitarnya</option>
+                        <option value="Luar Kota">Luar Kota / Lainnya</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <!-- Alamat Lengkap / Kompleks -->
+                  <div class="member-form-group">
+                    <label class="member-form-label" for="mbr-address">
+                      Alamat Lengkap / Kompleks Perumahan
+                    </label>
+                    <input type="text" id="mbr-address" class="member-form-input" placeholder="Contoh: Jl. Pelita Raya No. 12 / Perumahan CitraLand">
+                  </div>
+
+                  <!-- Kategori Minat Furnitur -->
+                  <div class="member-form-group">
+                    <label class="member-form-label" for="mbr-category">
+                      Kategori Furnitur Yang Paling Diminati <span class="req">*</span>
+                    </label>
+                    <select id="mbr-category" class="member-form-select" required>
+                      <option value="Sofa & Ruang Tamu">Sofa Minimalis & Ruang Tamu Kekinian</option>
+                      <option value="Set Meja Makan">Set Meja Makan Marmer & Kayu</option>
+                      <option value="Tempat Tidur & Kamar">Tempat Tidur & Kamar Tidur Minimalis</option>
+                      <option value="Credenza & Lemari">Credenza TV & Lemari Estetik</option>
+                      <option value="Interior Seluruh Rumah">Paket Lengkap Interior 1 Rumah</option>
+                    </select>
+                  </div>
+
+                  <!-- Catatan Tambahan -->
+                  <div class="member-form-group">
+                    <label class="member-form-label" for="mbr-notes">
+                      Rencana / Kebutuhan Furnitur Khusus (Opsional):
+                    </label>
+                    <textarea id="mbr-notes" class="member-form-textarea" placeholder="Contoh: Rencana isi rumah baru bulan depan, sedang cari sofa bentuk L warna krem..."></textarea>
+                  </div>
+
+                  <!-- Checkbox Persetujuan -->
+                  <label class="member-checkbox-group">
+                    <input type="checkbox" id="mbr-consent" required checked>
+                    <span>
+                      Saya menyetujui pendaftaran keanggotaan ruvia Privilege dan bersedia menerima info diskon serta voucher berkala via WhatsApp/Email.
+                    </span>
+                  </label>
+
+                  <!-- Tombol Submit Register -->
+                  <button type="submit" class="btn-submit-member" id="btn-submit-member">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><polyline points="16 11 18 13 22 9"></polyline></svg>
+                    <span id="btn-submit-label">Daftar Akun Member &bull; Gratis</span>
+                  </button>
+
+                  <div style="text-align: center; margin-top: 1.25rem; font-size: 0.85rem; color: var(--text-muted);">
+                    Sudah punya akun member? <a href="#" id="link-switch-to-login" style="color: var(--blue-primary); font-weight: 700; text-decoration: underline;">Masuk di sini</a>
+                  </div>
+                </form>
+              </div>
+
+              <!-- ==============================================================
+                   PANEL 2: FORMULIR MASUK / LOGIN MEMBER
+                   ============================================================== -->
+              <div id="panel-login-account" style="display: none;">
+                <h2 class="form-header-title">Masuk ke Akun Member</h2>
+                <p class="form-header-desc">
+                  Masukkan nomor WhatsApp, ID Member, atau Email beserta kata sandi akun member ruvia Anda.
+                </p>
+
+                <form id="form-login-member" novalidate>
+                  <div class="member-form-group">
+                    <label class="member-form-label" for="login-identifier">
+                      Nomor WhatsApp / ID Member / Email <span class="req">*</span>
+                    </label>
+                    <input type="text" id="login-identifier" class="member-form-input" required placeholder="Contoh: 081242338890 atau RUV-7821" autocomplete="username">
+                  </div>
+
+                  <div class="member-form-group">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.45rem;">
+                      <label class="member-form-label" for="login-password" style="margin-bottom: 0;">
+                        Kata Sandi <span class="req">*</span>
+                      </label>
+                      <a href="https://wa.me/628114500888?text=Halo%20Admin%20ruvia,%20saya%20lupa%20kata%20sandi%20akun%20member%20saya.%20Mohon%20bantuannya." target="_blank" rel="noopener noreferrer" style="font-size: 0.775rem; color: var(--blue-primary); font-weight: 600;">Lupa Sandi?</a>
+                    </div>
+                    <div class="password-input-wrap">
+                      <input type="password" id="login-password" class="member-form-input" required placeholder="Masukkan kata sandi akun" autocomplete="current-password">
+                      <button type="button" class="btn-toggle-pwd" data-target="login-password" aria-label="Lihat Kata Sandi">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                      </button>
+                    </div>
+                  </div>
+
+                  <div id="login-error-msg" style="display: none; background: #fee2e2; border: 1.5px solid #ef4444; color: #b91c1c; padding: 0.85rem 1rem; border-radius: var(--radius-sm); font-size: 0.875rem; margin-bottom: 1.25rem;">
+                    <div style="display: flex; align-items: flex-start; gap: 0.6rem;">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" style="flex-shrink: 0; margin-top: 1px;"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+                      <div id="login-error-text">Nomor WhatsApp / ID Member atau kata sandi tidak cocok.</div>
+                    </div>
+                  </div>
+
+                  <button type="submit" class="btn-submit-member" id="btn-submit-login">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path><polyline points="10 17 15 12 10 7"></polyline><line x1="15" y1="12" x2="3" y2="12"></line></svg>
+                    <span id="btn-login-label">Masuk ke Akun Member</span>
+                  </button>
+
+                  <div style="text-align: center; margin-top: 1.25rem; font-size: 0.85rem; color: var(--text-muted);">
+                    Belum punya akun member? <a href="#" id="link-switch-to-register" style="color: var(--blue-primary); font-weight: 700; text-decoration: underline;">Daftar gratis di sini</a>
+                  </div>
+                </form>
+              </div>
+
+              <!-- ==============================================================
+                   PANEL 3: DASHBOARD MEMBER LOGGED IN
+                   ============================================================== -->
+              <div id="panel-member-dashboard" class="member-dashboard-panel">
+                <div class="dashboard-user-header">
+                  <div>
+                    <div style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; color: var(--blue-primary); letter-spacing: 0.08em; margin-bottom: 0.25rem;">Area Anggota Resmi</div>
+                    <h3 class="user-welcome-title" id="dash-user-name">Selamat Datang, Member!</h3>
+                    <div class="user-welcome-sub">ID: <strong id="dash-user-id">-</strong> &bull; Status: <span style="color: #16a34a; font-weight: 700;">Aktif</span></div>
+                  </div>
+                  <div>
+                    <span class="card-tier-badge" style="box-shadow: none;">Gold Privilege</span>
+                  </div>
+                </div>
+
+                <!-- Voucher Box -->
+                <div class="voucher-box-gold">
+                  <div>
+                    <div style="font-size: 0.75rem; font-weight: 700; color: #b45309; text-transform: uppercase; letter-spacing: 0.05em;">Voucher Diskon Spesial Member</div>
+                    <div style="font-size: 1.15rem; font-weight: 800; color: #92400e; margin: 0.2rem 0;">Diskon Ekstra 10% Semua Furnitur</div>
+                    <div style="font-size: 0.8rem; color: #78350f;">Gunakan kode ini saat memesan via WhatsApp atau datang ke showroom:</div>
+                  </div>
+                  <div style="display: flex; align-items: center; gap: 0.65rem;">
+                    <div class="voucher-code-tag" id="voucher-code-text">RUVIA-VIP10</div>
+                    <button type="button" class="btn-copy-code" id="btn-copy-voucher">Salin</button>
+                  </div>
+                </div>
+
+                <!-- Ringkasan Profil Member -->
+                <div style="background: var(--bg-tertiary); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 1.25rem; margin-bottom: 1.5rem;">
+                  <h4 style="font-size: 0.925rem; font-weight: 700; color: var(--text-main); margin-bottom: 0.85rem;">Biodata Akun Terdaftar:</h4>
+                  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.85rem; font-size: 0.825rem;">
+                    <div>
+                      <span style="color: var(--text-muted); display: block;">No. WhatsApp:</span>
+                      <strong id="dash-user-wa" style="color: var(--text-main);">-</strong>
+                    </div>
+                    <div>
+                      <span style="color: var(--text-muted); display: block;">Domisili:</span>
+                      <strong id="dash-user-city" style="color: var(--text-main);">-</strong>
+                    </div>
+                    <div>
+                      <span style="color: var(--text-muted); display: block;">Email:</span>
+                      <strong id="dash-user-email" style="color: var(--text-main);">-</strong>
+                    </div>
+                    <div>
+                      <span style="color: var(--text-muted); display: block;">Kategori Minat:</span>
+                      <strong id="dash-user-category" style="color: var(--blue-primary);">-</strong>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Action Buttons Dashboard -->
+                <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+                  <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn-primary" id="btn-dash-claim-wa" style="width: 100%; padding: 0.95rem;">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+                    <span>Konsultasi &amp; Klaim Diskon via WhatsApp</span>
+                  </a>
+                  <a href="katalog.html" class="btn btn-outline-blue" style="width: 100%; padding: 0.85rem;">
+                    <span>Lihat Katalog Produk Kekinian</span>
+                  </a>
+                  <button type="button" class="btn btn-outline-blue" id="btn-switch-to-new-register" style="width: 100%; padding: 0.75rem; font-size: 0.875rem; background: #fff;">
+                    <span>+ Daftar Akun Member Baru Lain</span>
+                  </button>
+                  <button type="button" class="btn btn-outline-white" id="btn-member-logout" style="width: 100%; padding: 0.75rem; color: #dc2626; border-color: rgba(220, 38, 38, 0.3);">
+                    <span>Keluar Akun Member</span>
+                  </button>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- ==================================================================
+             FAQ SECTION MEMBERSHIP
+             ================================================================== -->
+        <div style="margin-top: 5rem; padding-top: 3.5rem; border-top: 1.5px solid var(--border-subtle);">
+          <div style="text-align: center; max-width: 650px; margin: 0 auto 2.5rem;">
+            <div class="section-badge">Tanya Jawab</div>
+            <h3 class="section-title light-mode" style="font-size: 1.85rem;">Pertanyaan Seputar Membership</h3>
+          </div>
+
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem; max-width: 1000px; margin: 0 auto;">
+            <div style="background: #ffffff; border: 1.5px solid var(--border-subtle); border-radius: var(--radius-md); padding: 1.5rem; box-shadow: var(--shadow-subtle);">
+              <h4 style="font-size: 1rem; font-weight: 700; color: var(--text-main); margin-bottom: 0.5rem;">Apakah ada biaya pendaftaran atau iuran tahunan?</h4>
+              <p style="font-size: 0.875rem; color: var(--text-muted); line-height: 1.55;">
+                Sama sekali tidak ada! Pendaftaran keanggotaan ruvia Privilege 100% Gratis dan berlaku seumur hidup tanpa biaya tersembunyi.
+              </p>
+            </div>
+
+            <div style="background: #ffffff; border: 1.5px solid var(--border-subtle); border-radius: var(--radius-md); padding: 1.5rem; box-shadow: var(--shadow-subtle);">
+              <h4 style="font-size: 1rem; font-weight: 700; color: var(--text-main); margin-bottom: 0.5rem;">Bagaimana cara menggunakan potongan diskon member?</h4>
+              <p style="font-size: 0.875rem; color: var(--text-muted); line-height: 1.55;">
+                Cukup sebutkan <strong>ID Member</strong> Anda atau nomor WhatsApp terdaftar saat berkonsultasi via chat atau saat datang langsung ke showroom kami di Jl. Gunung Latimojong No.78, Makassar.
+              </p>
+            </div>
+
+            <div style="background: #ffffff; border: 1.5px solid var(--border-subtle); border-radius: var(--radius-md); padding: 1.5rem; box-shadow: var(--shadow-subtle);">
+              <h4 style="font-size: 1rem; font-weight: 700; color: var(--text-main); margin-bottom: 0.5rem;">Apakah saya langsung dapat voucher setelah mendaftar?</h4>
+              <p style="font-size: 0.875rem; color: var(--text-muted); line-height: 1.55;">
+                Ya! Begitu berhasil mendaftar, Anda langsung mendapatkan kode ID Member dan dapat mengklaim Voucher Selamat Datang langsung melalui WhatsApp kami.
+              </p>
+            </div>
+
+            <div style="background: #ffffff; border: 1.5px solid var(--border-subtle); border-radius: var(--radius-md); padding: 1.5rem; box-shadow: var(--shadow-subtle);">
+              <h4 style="font-size: 1rem; font-weight: 700; color: var(--text-main); margin-bottom: 0.5rem;">Bagaimana jika nomor WhatsApp saya berganti?</h4>
+              <p style="font-size: 0.875rem; color: var(--text-muted); line-height: 1.55;">
+                Anda dapat menghubungi tim admin kami melalui WhatsApp untuk memperbarui data nomor WhatsApp baru yang terhubung dengan akun member Anda.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================================================
+       MODAL SUKSES PENDAFTARAN MEMBER
+       ========================================================================== -->
+  <div class="modal-overlay" id="modal-member-success" style="display: none; position: fixed; inset: 0; background: rgba(15, 23, 42, 0.7); backdrop-filter: blur(5px); z-index: 10000; align-items: center; justify-content: center; padding: 1.25rem;">
+    <div style="background: #ffffff; border-radius: 24px; max-width: 520px; width: 100%; padding: 2.25rem; box-shadow: 0 25px 60px rgba(0,0,0,0.3); text-align: center; position: relative; animation: popModal 0.3s cubic-bezier(0.16, 1, 0.3, 1);">
+      <button type="button" id="btn-close-member-success" style="position: absolute; top: 1.25rem; right: 1.25rem; background: var(--bg-tertiary); border: none; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; color: var(--text-muted);" aria-label="Tutup">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+
+      <!-- Success Icon -->
+      <div style="width: 64px; height: 64px; border-radius: 50%; background: #dcfce7; color: #16a34a; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.25rem; box-shadow: 0 4px 16px rgba(22, 163, 74, 0.2);">
+        <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+      </div>
+
+      <h3 style="font-size: 1.45rem; font-weight: 800; color: var(--text-main); margin-bottom: 0.5rem;">Selamat Bergabung!</h3>
+      <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.5rem; line-height: 1.5;">
+        Pendaftaran membership <strong id="success-member-name">Bapak/Ibu</strong> telah aktif di sistem database <strong>ruvia Furniture Makassar</strong>.
+      </p>
+
+      <!-- ID Member Card Banner -->
+      <div style="background: linear-gradient(135deg, #10126b 0%, #1e1fab 100%); border-radius: 16px; padding: 1.25rem; color: #ffffff; margin-bottom: 1.5rem; border: 1.5px solid rgba(248, 195, 32, 0.5); box-shadow: 0 8px 24px rgba(30,31,171,0.25);">
+        <div style="font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.7); margin-bottom: 0.25rem;">ID Keanggotaan Resmi:</div>
+        <div style="font-family: 'Courier New', monospace; font-size: 1.75rem; font-weight: 800; color: #f8c320; letter-spacing: 0.15em;" id="success-member-id">RUV-2026-8821</div>
+        <div style="font-size: 0.8rem; margin-top: 0.35rem; color: rgba(255,255,255,0.85);">Status: <strong>Gold Privilege Member (Aktif)</strong></div>
+      </div>
+
+      <!-- Action Buttons -->
+      <div style="display: flex; flex-direction: column; gap: 0.85rem;">
+        <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn-primary" id="btn-claim-welcome-wa" style="width: 100%; padding: 0.95rem; font-size: 0.95rem;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+          <span>Klaim Voucher Diskon via WhatsApp</span>
+        </a>
+        <a href="katalog.html" class="btn btn-outline-blue" style="width: 100%; padding: 0.85rem;">
+          <span>Lihat Katalog Furnitur Kekinian</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    @keyframes popModal {
+      from { transform: scale(0.92); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+  </style>
+
+  <!-- ==========================================================================
+       FOOTER (Modular Component: components/footer.html)
+       ========================================================================== -->
+  <div id="footer-placeholder"></div>
+
+  <!-- Floating WhatsApp CTA -->
+  <aside class="floating-whatsapp-wrap" id="floating-wa" aria-label="Konsultasi Cepat WhatsApp">
+    <a href="https://wa.me/628114500888?text=Halo%20ruvia%20Makassar,%20saya%20mau%20konsultasi%20custom%20warna%20dan%20ukuran%20furnitur." 
+       target="_blank" 
+       rel="noopener noreferrer" 
+       class="floating-wa-btn" 
+       id="floating-wa-link"
+       aria-label="Chat WhatsApp Konsultan ruvia">
+      <div class="wa-icon-box">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm.01 1.67c2.2 0 4.26.86 5.82 2.41 1.56 1.56 2.41 3.63 2.41 5.83s-.85 4.27-2.41 5.83c-1.56 1.56-3.62 2.41-5.82 2.41-1.48 0-2.93-.39-4.2-1.14l-.3-.18-3.12.82.83-3.04-.2-.31c-.82-1.31-1.26-2.83-1.26-4.39 0-2.2.86-4.27 2.41-5.83 1.56-1.55 3.63-2.41 5.84-2.41zm-3.32 3.61c-.18 0-.48.07-.73.34-.25.28-.96.94-.96 2.29s.98 2.66 1.12 2.84c.14.18 1.93 2.95 4.67 4.13.65.28 1.16.45 1.56.57.66.21 1.26.18 1.73.11.53-.08 1.63-.67 1.86-1.31.23-.65.23-1.2.16-1.31-.07-.12-.25-.18-.53-.32-.28-.14-1.63-.8-1.88-.89-.25-.09-.44-.14-.62.14-.18.28-.71.89-.87 1.07-.16.18-.32.21-.6.07-.28-.14-1.18-.44-2.25-1.39-.83-.74-1.39-1.66-1.55-1.94-.16-.28-.02-.43.12-.57.13-.13.28-.32.42-.48.14-.16.18-.28.28-.46.09-.18.05-.35-.02-.49-.07-.14-.62-1.5-.85-2.06-.23-.54-.46-.47-.63-.48-.16-.01-.35-.01-.53-.01z"/>
+        </svg>
+      </div>
+      <div class="wa-text-box">
+        <span class="wa-title">Konsultasi Desain</span>
+        <span class="wa-sub">Online &bull; Respon Cepat</span>
+      </div>
+    </a>
+  </aside>
+
+  <!-- Shared Scripts -->
+  <script src="script.js"></script>
+
+  <!-- Member Page Specific Interaction Script (Dual Auth: Register & Login) -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Helper URL for file:// and http:// protocols (works seamlessly across localhost:3000, Live Server, and file://)
+      function getApiUrl(endpoint) {
+        if ((window.location.protocol === 'http:' || window.location.protocol === 'https:') && window.location.port === '3000') {
+          return endpoint;
+        }
+        return 'http://localhost:3000' + endpoint;
+      }
+
+      // --- Tab Navigation Elements ---
+      const authTabContainer = document.getElementById('auth-tab-container');
+      const tabBtnRegister = document.getElementById('tab-btn-register');
+      const tabBtnLogin = document.getElementById('tab-btn-login');
+      const panelRegister = document.getElementById('panel-register-account');
+      const panelLogin = document.getElementById('panel-login-account');
+      const panelDashboard = document.getElementById('panel-member-dashboard');
+      const linkSwitchToLogin = document.getElementById('link-switch-to-login');
+      const linkSwitchToRegister = document.getElementById('link-switch-to-register');
+
+      // --- Registration Form Elements ---
+      const formRegister = document.getElementById('form-register-member');
+      const inputName = document.getElementById('mbr-name');
+      const inputWa = document.getElementById('mbr-wa');
+      const inputEmail = document.getElementById('mbr-email');
+      const inputPass = document.getElementById('mbr-pass');
+      const inputPassConfirm = document.getElementById('mbr-pass-confirm');
+      const inputDob = document.getElementById('mbr-dob');
+      const selectCity = document.getElementById('mbr-city');
+      const inputAddress = document.getElementById('mbr-address');
+      const selectCategory = document.getElementById('mbr-category');
+      const textNotes = document.getElementById('mbr-notes');
+      const btnSubmitMember = document.getElementById('btn-submit-member');
+      const btnSubmitLabel = document.getElementById('btn-submit-label');
+
+      // --- Login Form Elements ---
+      const formLogin = document.getElementById('form-login-member');
+      const inputLoginId = document.getElementById('login-identifier');
+      const inputLoginPass = document.getElementById('login-password');
+      const loginErrorMsg = document.getElementById('login-error-msg');
+      const loginErrorText = document.getElementById('login-error-text');
+      const registerErrorMsg = document.getElementById('register-error-msg');
+      const registerErrorText = document.getElementById('register-error-text');
+      const btnSubmitLogin = document.getElementById('btn-submit-login');
+      const btnLoginLabel = document.getElementById('btn-login-label');
+
+      // --- Card Preview Elements ---
+      const cardPreviewName = document.getElementById('card-preview-name');
+      const cardPreviewId = document.getElementById('card-preview-id');
+
+      // --- Dashboard Elements ---
+      const dashUserName = document.getElementById('dash-user-name');
+      const dashUserId = document.getElementById('dash-user-id');
+      const dashUserWa = document.getElementById('dash-user-wa');
+      const dashUserCity = document.getElementById('dash-user-city');
+      const dashUserEmail = document.getElementById('dash-user-email');
+      const dashUserCategory = document.getElementById('dash-user-category');
+      const voucherCodeText = document.getElementById('voucher-code-text');
+      const btnCopyVoucher = document.getElementById('btn-copy-voucher');
+      const btnDashClaimWa = document.getElementById('btn-dash-claim-wa');
+      const btnSwitchNewRegister = document.getElementById('btn-switch-to-new-register');
+      const btnMemberLogout = document.getElementById('btn-member-logout');
+
+      // --- Success Modal Elements ---
+      const modalSuccess = document.getElementById('modal-member-success');
+      const successMemberName = document.getElementById('success-member-name');
+      const successMemberId = document.getElementById('success-member-id');
+      const btnClaimWa = document.getElementById('btn-claim-welcome-wa');
+      const btnCloseSuccess = document.getElementById('btn-close-member-success');
+
+      // =========================================================================
+      // 1. TAB SWITCHING (DAFTAR AKUN <-> MASUK MEMBER)
+      // =========================================================================
+      function switchToRegister() {
+        if (tabBtnRegister) {
+          tabBtnRegister.classList.add('active');
+          tabBtnRegister.setAttribute('aria-selected', 'true');
+        }
+        if (tabBtnLogin) {
+          tabBtnLogin.classList.remove('active');
+          tabBtnLogin.setAttribute('aria-selected', 'false');
+        }
+        if (panelRegister) panelRegister.style.display = 'block';
+        if (panelLogin) panelLogin.style.display = 'none';
+        if (panelDashboard) panelDashboard.style.display = 'none';
+        if (authTabContainer) authTabContainer.style.display = 'grid';
+        if (loginErrorMsg) loginErrorMsg.style.display = 'none';
+        if (registerErrorMsg) registerErrorMsg.style.display = 'none';
+      }
+
+      function switchToLogin(prefillId = '') {
+        if (tabBtnLogin) {
+          tabBtnLogin.classList.add('active');
+          tabBtnLogin.setAttribute('aria-selected', 'true');
+        }
+        if (tabBtnRegister) {
+          tabBtnRegister.classList.remove('active');
+          tabBtnRegister.setAttribute('aria-selected', 'false');
+        }
+        if (panelLogin) panelLogin.style.display = 'block';
+        if (panelRegister) panelRegister.style.display = 'none';
+        if (panelDashboard) panelDashboard.style.display = 'none';
+        if (authTabContainer) authTabContainer.style.display = 'grid';
+        if (loginErrorMsg) loginErrorMsg.style.display = 'none';
+        if (registerErrorMsg) registerErrorMsg.style.display = 'none';
+        if (prefillId && inputLoginId) {
+          inputLoginId.value = prefillId;
+        }
+        if (inputLoginPass) inputLoginPass.value = '';
+        if (inputLoginId) inputLoginId.focus();
+      }
+
+      if (tabBtnRegister) {
+        tabBtnRegister.addEventListener('click', switchToRegister);
+      }
+      if (tabBtnLogin) {
+        tabBtnLogin.addEventListener('click', () => switchToLogin());
+      }
+      if (linkSwitchToLogin) {
+        linkSwitchToLogin.addEventListener('click', (e) => {
+          e.preventDefault();
+          switchToLogin(inputWa ? inputWa.value.trim() : '');
+        });
+      }
+      if (linkSwitchToRegister) {
+        linkSwitchToRegister.addEventListener('click', (e) => {
+          e.preventDefault();
+          switchToRegister();
+        });
+      }
+
+      // =========================================================================
+      // 2. TOGGLE PASSWORD VISIBILITY (EYE BUTTON)
+      // =========================================================================
+      document.querySelectorAll('.btn-toggle-pwd').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const targetId = btn.getAttribute('data-target');
+          const targetInput = document.getElementById(targetId);
+          if (!targetInput) return;
+
+          const isPassword = targetInput.type === 'password';
+          targetInput.type = isPassword ? 'text' : 'password';
+
+          btn.innerHTML = isPassword
+            ? `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path><line x1="1" y1="1" x2="23" y2="23"></line></svg>`
+            : `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>`;
+        });
+      });
+
+      // =========================================================================
+      // 3. LIVE SYNCHRONIZATION OF VIRTUAL CARD PREVIEW
+      // =========================================================================
+      if (inputName && cardPreviewName) {
+        inputName.addEventListener('input', () => {
+          const val = inputName.value.trim();
+          cardPreviewName.textContent = val ? val.toUpperCase() : 'NAMA LENGKAP ANDA';
+        });
+      }
+
+      // =========================================================================
+      // 4. MEMBER DASHBOARD CONTROLLER & SESSION MANAGEMENT
+      // =========================================================================
+      function renderMemberDashboard(member) {
+        if (!member) return;
+
+        // Hide auth tabs & login/register forms
+        if (authTabContainer) authTabContainer.style.display = 'none';
+        if (panelRegister) panelRegister.style.display = 'none';
+        if (panelLogin) panelLogin.style.display = 'none';
+        if (panelDashboard) panelDashboard.style.display = 'block';
+
+        // Update dashboard details
+        if (dashUserName) dashUserName.textContent = `Selamat Datang, ${member.fullName || 'Member'}!`;
+        if (dashUserId) dashUserId.textContent = member.id || 'RUV-VIP';
+        if (dashUserWa) dashUserWa.textContent = member.whatsapp || '-';
+        if (dashUserCity) dashUserCity.textContent = member.city || 'Makassar';
+        if (dashUserEmail) dashUserEmail.textContent = member.email || 'Belum diisi';
+        if (dashUserCategory) dashUserCategory.textContent = member.categoryInterest || 'Sofa & Ruang Tamu';
+
+        // Sync card preview
+        if (cardPreviewName) cardPreviewName.textContent = (member.fullName || 'NAMA LENGKAP').toUpperCase();
+        if (cardPreviewId) cardPreviewId.textContent = member.id || 'RUV-2026-XXXX';
+
+        // Setup WhatsApp direct claim CTA
+        if (btnDashClaimWa) {
+          const msg = encodeURIComponent(
+            `Halo ruvia Furniture Makassar,\n\nSaya telah masuk sebagai Member ruvia Privilege:\nNama: ${member.fullName}\nID Member: ${member.id}\nNo. WhatsApp: ${member.whatsapp}\nKode Voucher: RUVIA-VIP10\n\nSaya ingin berkonsultasi seputar furnitur minimalis/custom dan klaim voucher diskon 10%. Terima kasih!`
+          );
+          btnDashClaimWa.href = `https://wa.me/628114500888?text=${msg}`;
+        }
+      }
+
+      async function logoutMember() {
+        try {
+          await fetch(getApiUrl('/api/members/logout'), { method: 'POST', credentials: 'include' });
+        } catch (e) {}
+        sessionStorage.removeItem('ruvia_member_session');
+        localStorage.removeItem('ruvia_active_member');
+        if (cardPreviewName) cardPreviewName.textContent = 'NAMA LENGKAP ANDA';
+        if (cardPreviewId) cardPreviewId.textContent = 'RUV-2026-XXXX';
+        switchToLogin();
+      }
+
+      if (btnMemberLogout) {
+        btnMemberLogout.addEventListener('click', () => {
+          if (confirm('Apakah Anda yakin ingin keluar dari akun member?')) {
+            logoutMember();
+          }
+        });
+      }
+
+      // Check existing session on load (Server cookie HttpOnly first, lalu display cache)
+      const urlParams = new URLSearchParams(window.location.search);
+      const tabParam = urlParams.get('tab');
+
+      if (tabParam === 'register') {
+        switchToRegister();
+      } else if (tabParam === 'login') {
+        switchToLogin();
+      } else {
+        fetch(getApiUrl('/api/members/me'), { credentials: 'include' })
+          .then(res => res.ok ? res.json() : null)
+          .then(data => {
+            if (data && data.authenticated && data.member) {
+              const minimal = { id: data.member.id, fullName: data.member.fullName };
+              sessionStorage.setItem('ruvia_member_session', JSON.stringify(minimal));
+              renderMemberDashboard(data.member);
+            } else {
+              const savedSession = sessionStorage.getItem('ruvia_member_session') || localStorage.getItem('ruvia_active_member');
+              if (savedSession) {
+                try {
+                  const parsed = JSON.parse(savedSession);
+                  if (parsed && parsed.id) {
+                    renderMemberDashboard(parsed);
+                    return;
+                  }
+                } catch (e) {}
+              }
+              switchToRegister();
+            }
+          })
+          .catch(() => {
+            const savedSession = sessionStorage.getItem('ruvia_member_session') || localStorage.getItem('ruvia_active_member');
+            if (savedSession) {
+              try {
+                const parsed = JSON.parse(savedSession);
+                if (parsed && parsed.id) {
+                  renderMemberDashboard(parsed);
+                  return;
+                }
+              } catch (e) {}
+            }
+            switchToRegister();
+          });
+      }
+
+      if (btnSwitchNewRegister) {
+        btnSwitchNewRegister.addEventListener('click', () => {
+          sessionStorage.removeItem('ruvia_member_session');
+          localStorage.removeItem('ruvia_active_member');
+          switchToRegister();
+        });
+      }
+
+      // Helper function for inline register errors
+      function showRegisterError(message, targetInput = null) {
+        if (registerErrorMsg && registerErrorText) {
+          registerErrorText.textContent = message;
+          registerErrorMsg.style.display = 'block';
+          registerErrorMsg.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        } else {
+          alert(message);
+        }
+        if (targetInput) {
+          targetInput.style.borderColor = '#ef4444';
+          targetInput.focus();
+        }
+      }
+
+      function clearRegisterError() {
+        if (registerErrorMsg) registerErrorMsg.style.display = 'none';
+        [inputName, inputWa, inputPass, inputPassConfirm].forEach(el => {
+          if (el) el.style.borderColor = '';
+        });
+      }
+
+      [inputName, inputWa, inputPass, inputPassConfirm].forEach(el => {
+        if (el) {
+          el.addEventListener('input', () => {
+            el.style.borderColor = '';
+            if (registerErrorMsg) registerErrorMsg.style.display = 'none';
+          });
+        }
+      });
+
+      // =========================================================================
+      // 5. REGISTRATION SUBMIT HANDLER
+      // =========================================================================
+      if (formRegister) {
+        formRegister.addEventListener('submit', async (e) => {
+          e.preventDefault();
+          clearRegisterError();
+
+          const fullName = inputName.value.trim();
+          const whatsapp = inputWa.value.trim();
+          const password = inputPass ? inputPass.value : '';
+          const passwordConfirm = inputPassConfirm ? inputPassConfirm.value : '';
+
+          if (!fullName) {
+            showRegisterError('Silakan masukkan nama lengkap Anda.', inputName);
+            return;
+          }
+
+          const cleanWaDigits = whatsapp.replace(/[^0-9]/g, '');
+          if (!whatsapp || cleanWaDigits.length < 9) {
+            showRegisterError('Silakan masukkan nomor WhatsApp aktif yang valid (minimal 9 digit, contoh: 081242338890).', inputWa);
+            return;
+          }
+
+          if (!password || password.length < 8) {
+            showRegisterError('Kata sandi wajib diisi minimal 8 karakter demi keamanan akun Anda.', inputPass);
+            return;
+          }
+
+          if (password !== passwordConfirm) {
+            showRegisterError('Konfirmasi kata sandi tidak cocok. Mohon ulangi kata sandi yang sama.', inputPassConfirm);
+            return;
+          }
+
+          const payload = {
+            fullName,
+            whatsapp,
+            password: password,
+            email: inputEmail ? inputEmail.value.trim() : '',
+            birthDate: inputDob ? inputDob.value : '',
+            city: selectCity ? selectCity.value : 'Makassar',
+            address: inputAddress ? inputAddress.value.trim() : '',
+            categoryInterest: selectCategory ? selectCategory.value : 'Sofa & Ruang Tamu',
+            notes: textNotes ? textNotes.value.trim() : ''
+          };
+
+          if (btnSubmitMember) btnSubmitMember.disabled = true;
+          if (btnSubmitLabel) btnSubmitLabel.textContent = 'Mendaftarkan Akun...';
+
+          let newMember = null;
+          let conflictOccurred = false;
+
+          try {
+            const res = await fetch(getApiUrl('/api/members'), {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              credentials: 'include',
+              body: JSON.stringify(payload)
+            });
+
+            const result = await res.json();
+
+            if (!res.ok) {
+              if (res.status === 409) {
+                conflictOccurred = true;
+                showRegisterError(
+                  `Nomor WhatsApp <strong>${whatsapp}</strong> sudah terdaftar sebagai Member ruvia.<br>` +
+                  `<button type="button" id="btn-err-go-login" style="margin-top: 6px; background: none; border: none; padding: 0; color: #1e1fab; font-weight: 700; text-decoration: underline; cursor: pointer; font-size: inherit;">&rarr; Klik di sini untuk Masuk ke Akun Anda</button>`
+                );
+                const btnErrLogin = document.getElementById('btn-err-go-login');
+                if (btnErrLogin) {
+                  btnErrLogin.addEventListener('click', () => {
+                    switchToLogin(whatsapp);
+                  });
+                }
+                return;
+              }
+              throw new Error(result.error || 'Gagal mendaftarkan akun member');
+            }
+
+            newMember = result.member;
+          } catch (err) {
+            if (conflictOccurred) return;
+            console.error('Registration error:', err);
+            showRegisterError(err.message || 'Gagal mendaftarkan akun member. Silakan periksa kembali data Anda atau coba beberapa saat lagi.');
+          } finally {
+            if (btnSubmitMember) btnSubmitMember.disabled = false;
+            if (btnSubmitLabel) btnSubmitLabel.textContent = 'Daftar Akun Member \u2022 Gratis';
+          }
+
+          if (newMember) {
+            // Simpan hanya info tampilan minimal di client storage (B2)
+            const minimalProfile = {
+              id: newMember.id,
+              fullName: newMember.fullName
+            };
+            sessionStorage.setItem('ruvia_member_session', JSON.stringify(minimalProfile));
+            try {
+              localStorage.setItem('ruvia_active_member', JSON.stringify(minimalProfile));
+            } catch (e) {}
+
+            // Populate success modal
+            if (cardPreviewId) cardPreviewId.textContent = newMember.id;
+            if (cardPreviewName) cardPreviewName.textContent = newMember.fullName.toUpperCase();
+            if (successMemberName) successMemberName.textContent = newMember.fullName;
+            if (successMemberId) successMemberId.textContent = newMember.id;
+
+            if (btnClaimWa) {
+              const waText = encodeURIComponent(
+                `Halo ruvia Furniture Makassar,\n\nSaya telah mendaftar sebagai Member Privilege ruvia!\nNama: ${newMember.fullName}\nID Member: ${newMember.id}\nNo. WhatsApp: ${newMember.whatsapp}\nMinat: ${newMember.categoryInterest}\n\nSaya ingin klaim Voucher Selamat Datang 10% & info promo khusus member. Terima kasih!`
+              );
+              btnClaimWa.href = `https://wa.me/628114500888?text=${waText}`;
+            }
+
+            // Show success modal
+            if (modalSuccess) modalSuccess.style.display = 'flex';
+
+            // Reset registration form
+            formRegister.reset();
+          }
+        });
+      }
+
+      // Close modal & transition into dashboard
+      function dismissSuccessModal() {
+        if (modalSuccess) modalSuccess.style.display = 'none';
+        const activeSession = sessionStorage.getItem('ruvia_member_session');
+        if (activeSession) {
+          try {
+            renderMemberDashboard(JSON.parse(activeSession));
+          } catch (e) {}
+        }
+      }
+
+      if (btnCloseSuccess) {
+        btnCloseSuccess.addEventListener('click', dismissSuccessModal);
+      }
+      if (modalSuccess) {
+        modalSuccess.addEventListener('click', (e) => {
+          if (e.target === modalSuccess) dismissSuccessModal();
+        });
+      }
+
+      // =========================================================================
+      // 6. LOGIN SUBMIT HANDLER
+      // =========================================================================
+      if (formLogin) {
+        formLogin.addEventListener('submit', async (e) => {
+          e.preventDefault();
+
+          const identifier = inputLoginId ? inputLoginId.value.trim() : '';
+          const password = inputLoginPass ? inputLoginPass.value : '';
+
+          if (!identifier) {
+            if (loginErrorMsg && loginErrorText) {
+              loginErrorText.textContent = 'Silakan masukkan nomor WhatsApp, ID Member, atau Email Anda.';
+              loginErrorMsg.style.display = 'block';
+            } else {
+              alert('Silakan masukkan nomor WhatsApp, ID Member, atau Email Anda.');
+            }
+            if (inputLoginId) inputLoginId.focus();
+            return;
+          }
+
+          if (!password) {
+            if (loginErrorMsg && loginErrorText) {
+              loginErrorText.textContent = 'Silakan masukkan kata sandi akun member Anda.';
+              loginErrorMsg.style.display = 'block';
+            } else {
+              alert('Silakan masukkan kata sandi akun member Anda.');
+            }
+            if (inputLoginPass) inputLoginPass.focus();
+            return;
+          }
+
+          if (loginErrorMsg) loginErrorMsg.style.display = 'none';
+          if (btnSubmitLogin) btnSubmitLogin.disabled = true;
+          if (btnLoginLabel) btnLoginLabel.textContent = 'Memeriksa Akun...';
+
+          try {
+            const res = await fetch(getApiUrl('/api/members/login'), {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              credentials: 'include',
+              body: JSON.stringify({ identifier, password })
+            });
+
+            const result = await res.json();
+
+            if (!res.ok) {
+              if (loginErrorMsg && loginErrorText) {
+                loginErrorText.textContent = result.error || 'Nomor WhatsApp / ID Member atau kata sandi tidak cocok.';
+                loginErrorMsg.style.display = 'block';
+              } else if (loginErrorMsg) {
+                loginErrorMsg.style.display = 'block';
+              }
+              return;
+            }
+
+            const loggedInMember = result.member;
+
+            // B2: Simpan hanya info minimal (nama & ID) untuk tampilan
+            const minimalProfile = {
+              id: loggedInMember.id,
+              fullName: loggedInMember.fullName
+            };
+            sessionStorage.setItem('ruvia_member_session', JSON.stringify(minimalProfile));
+            try {
+              localStorage.setItem('ruvia_active_member', JSON.stringify(minimalProfile));
+            } catch (e) {}
+            renderMemberDashboard(loggedInMember);
+
+            // Reset login input
+            formLogin.reset();
+
+          } catch (err) {
+            console.error('API login failed:', err);
+            if (loginErrorMsg && loginErrorText) {
+              loginErrorText.textContent = 'Gagal menghubungi server atau verifikasi akun. Silakan coba kembali.';
+              loginErrorMsg.style.display = 'block';
+            }
+          } finally {
+            if (btnSubmitLogin) btnSubmitLogin.disabled = false;
+            if (btnLoginLabel) btnLoginLabel.textContent = 'Masuk ke Akun Member';
+          }
+        });
+      }
+
+      // =========================================================================
+      // 7. VOUCHER CODE COPY TO CLIPBOARD
+      // =========================================================================
+      if (btnCopyVoucher && voucherCodeText) {
+        btnCopyVoucher.addEventListener('click', async () => {
+          const code = voucherCodeText.textContent.trim();
+          try {
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+              await navigator.clipboard.writeText(code);
+            } else {
+              const ta = document.createElement('textarea');
+              ta.value = code;
+              document.body.appendChild(ta);
+              ta.select();
+              document.execCommand('copy');
+              document.body.removeChild(ta);
+            }
+            const orig = btnCopyVoucher.textContent;
+            btnCopyVoucher.textContent = 'Tersalin! \u2713';
+            btnCopyVoucher.style.background = '#16a34a';
+            setTimeout(() => {
+              btnCopyVoucher.textContent = orig;
+              btnCopyVoucher.style.background = '';
+            }, 2000);
+          } catch (e) {
+            prompt('Salin kode voucher berikut:', code);
+          }
+        });
+      }
+    });
+  </script>
+</body>
+</html>

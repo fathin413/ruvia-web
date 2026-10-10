@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daftar Member &amp; CRM &bull; Admin Ruvia Furniture Makassar</title>
+  <meta name="robots" content="noindex, nofollow">
+  <!-- Google Fonts: Poppins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="admin.css">
+  <link rel="stylesheet" href="/admin/admin.css">
+</head>
+<body>
+
+  <!-- ADMIN TOPBAR (Loaded from admin/header.html) -->
+  <div id="admin-header-placeholder"></div>
+
+  <!-- ADMIN MAIN LAYOUT -->
+  <div class="admin-layout">
+    <!-- ADMIN SIDEBAR (Loaded from admin/sidebar.html) -->
+    <div id="admin-sidebar-placeholder"></div>
+
+    <!-- MAIN CONTENT AREA -->
+    <main class="admin-content-area">
+      <section class="tab-panel active" id="tab-members" style="display: block;">
+        <div class="panel-header" style="display: flex; align-items: flex-start; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
+          <div>
+            <h1 class="panel-title">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+              <span>Daftar Member ruvia</span>
+            </h1>
+            <p class="panel-subtitle">
+              Kelola data biodata pelanggan yang terdaftar sebagai member ruvia Privilege Makassar untuk keperluan follow-up dan broadcast promo.
+            </p>
+          </div>
+          <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+            <button type="button" class="btn-adm btn-adm-outline" id="btn-export-members" title="Unduh data dalam format CSV">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+              <span>Export CSV</span>
+            </button>
+            <button type="button" class="btn-adm btn-adm-outline" id="btn-copy-wa-broadcast" title="Salin nomor WhatsApp semua member">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+              <span>Salin No. WA</span>
+            </button>
+            <button type="button" class="btn-adm btn-adm-primary" id="btn-open-add-member">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+              <span>Tambah Member</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- KPI SUMMARY METRICS -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 1rem; margin-bottom: 1.75rem;">
+          <div class="admin-card" style="margin-bottom: 0; padding: 1.25rem;">
+            <div style="font-size: 0.775rem; font-weight: 600; color: var(--admin-gray-600); text-transform: uppercase;">Total Member</div>
+            <div style="font-size: 1.85rem; font-weight: 800; color: var(--admin-blue-primary); margin-top: 0.35rem;" id="kpi-total-members">0</div>
+            <div style="font-size: 0.75rem; color: var(--admin-gray-400); margin-top: 0.2rem;">Privilege Aktif</div>
+          </div>
+          <div class="admin-card" style="margin-bottom: 0; padding: 1.25rem;">
+            <div style="font-size: 0.775rem; font-weight: 600; color: var(--admin-gray-600); text-transform: uppercase;">Kategori Terfavorit</div>
+            <div style="font-size: 1.2rem; font-weight: 800; color: var(--admin-gray-900); margin-top: 0.35rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" id="kpi-favorite-category">-</div>
+            <div style="font-size: 0.75rem; color: var(--admin-gray-400); margin-top: 0.2rem;">Minat tertinggi pelanggan</div>
+          </div>
+          <div class="admin-card" style="margin-bottom: 0; padding: 1.25rem;">
+            <div style="font-size: 0.775rem; font-weight: 600; color: var(--admin-gray-600); text-transform: uppercase;">Domisili Terbanyak</div>
+            <div style="font-size: 1.2rem; font-weight: 800; color: var(--admin-gray-900); margin-top: 0.35rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" id="kpi-top-city">-</div>
+            <div style="font-size: 0.75rem; color: var(--admin-gray-400); margin-top: 0.2rem;">Area utama domisili</div>
+          </div>
+          <div class="admin-card" style="margin-bottom: 0; padding: 1.25rem;">
+            <div style="font-size: 0.775rem; font-weight: 600; color: var(--admin-gray-600); text-transform: uppercase;">Status Server Member</div>
+            <div style="font-size: 1.2rem; font-weight: 800; color: var(--admin-success); margin-top: 0.35rem;" id="kpi-db-status">Tersinkron</div>
+            <div style="font-size: 0.75rem; color: var(--admin-gray-400); margin-top: 0.2rem;">/api/members Aktif</div>
+          </div>
+        </div>
+
+        <!-- SEARCH & FILTER TOOLBAR -->
+        <div class="admin-card" style="padding: 1.25rem; margin-bottom: 1.25rem;">
+          <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+            <div style="flex: 1; min-width: 240px; position: relative;">
+              <input type="text" id="member-search-input" class="form-input" placeholder="Cari nama, no. WhatsApp, atau kota member...">
+            </div>
+            <div style="min-width: 200px;">
+              <select id="member-filter-category" class="form-select">
+                <option value="">Semua Minat Furnitur</option>
+                <option value="Sofa & Ruang Tamu">Sofa & Ruang Tamu</option>
+                <option value="Set Meja Makan">Set Meja Makan</option>
+                <option value="Tempat Tidur">Tempat Tidur & Kamar</option>
+                <option value="Credenza & Lemari">Credenza & Lemari</option>
+                <option value="Interior Seluruh Rumah">Interior Seluruh Rumah</option>
+              </select>
+            </div>
+            <button type="button" class="btn-adm btn-adm-outline" id="btn-refresh-members" title="Muat Ulang Data">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 4 23 10 17 10"></polyline><polyline points="1 20 1 14 7 14"></polyline><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path></svg>
+              <span>Refresh</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- MEMBERS DATA TABLE -->
+        <div class="admin-card" style="padding: 0; overflow: hidden;">
+          <div style="overflow-x: auto;">
+            <table class="member-table" style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.875rem;">
+              <thead style="background: var(--admin-gray-100); border-bottom: 1px solid var(--admin-gray-200);">
+                <tr>
+                  <th style="padding: 0.85rem 1rem; font-weight: 700; color: var(--admin-gray-700); width: 45px;">No</th>
+                  <th style="padding: 0.85rem 1rem; font-weight: 700; color: var(--admin-gray-700);">ID Member</th>
+                  <th style="padding: 0.85rem 1rem; font-weight: 700; color: var(--admin-gray-700);">Nama Lengkap</th>
+                  <th style="padding: 0.85rem 1rem; font-weight: 700; color: var(--admin-gray-700);">WhatsApp</th>
+                  <th style="padding: 0.85rem 1rem; font-weight: 700; color: var(--admin-gray-700);">Domisili</th>
+                  <th style="padding: 0.85rem 1rem; font-weight: 700; color: var(--admin-gray-700);">Minat Furnitur</th>
+                  <th style="padding: 0.85rem 1rem; font-weight: 700; color: var(--admin-gray-700);">Tgl Daftar</th>
+                  <th style="padding: 0.85rem 1rem; font-weight: 700; color: var(--admin-gray-700); text-align: center;">Aksi</th>
+                </tr>
+              </thead>
+              <tbody id="member-table-body">
+                <!-- Dynamically Rendered -->
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Empty State -->
+          <div id="member-empty-state" style="display: none; text-align: center; padding: 3rem 1.5rem;">
+            <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">📋</div>
+            <h3 style="font-size: 1.1rem; font-weight: 700; color: var(--admin-gray-700);">Belum Ada Member Terdaftar</h3>
+            <p style="font-size: 0.85rem; color: var(--admin-gray-400); margin-top: 0.25rem;">
+              Data pendaftaran dari halaman <a href="/login.html" target="_blank" style="color: var(--admin-blue-primary);">login.html / member.html</a> akan otomatis muncul di sini.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- MODAL: DETAIL BIODATA MEMBER -->
+  <div class="admin-modal-overlay" id="member-detail-modal-overlay">
+    <div class="admin-modal-card">
+      <div class="modal-header-row">
+        <h3 class="modal-title-text">Detail Biodata Member</h3>
+        <button type="button" class="modal-close-btn" id="btn-close-member-detail" aria-label="Tutup">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+      </div>
+
+      <div style="margin-bottom: 1.5rem;">
+        <div style="background: var(--admin-blue-light); border: 1.5px solid rgba(30, 31, 171, 0.2); border-radius: var(--admin-radius-md); padding: 1.25rem; display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.25rem;">
+          <div>
+            <span class="member-tier-pill" id="detail-mbr-tier">Ruvia Gold Member</span>
+            <h4 style="font-size: 1.25rem; font-weight: 800; color: var(--admin-blue-primary); margin-top: 0.35rem;" id="detail-mbr-name">-</h4>
+          </div>
+          <div style="text-align: right;">
+            <div style="font-size: 0.725rem; color: var(--admin-gray-600); text-transform: uppercase;">ID Anggota</div>
+            <span class="member-id-tag" style="font-size: 0.95rem;" id="detail-mbr-id">-</span>
+          </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
+          <div style="background: var(--admin-gray-50); border: 1px solid var(--admin-gray-200); padding: 0.85rem; border-radius: var(--admin-radius-sm);">
+            <div style="font-size: 0.75rem; color: var(--admin-gray-400); font-weight: 600; text-transform: uppercase;">No. WhatsApp</div>
+            <div style="font-size: 0.95rem; font-weight: 700; color: var(--admin-gray-900); margin-top: 0.2rem;" id="detail-mbr-wa">-</div>
+          </div>
+          <div style="background: var(--admin-gray-50); border: 1px solid var(--admin-gray-200); padding: 0.85rem; border-radius: var(--admin-radius-sm);">
+            <div style="font-size: 0.75rem; color: var(--admin-gray-400); font-weight: 600; text-transform: uppercase;">Alamat Email</div>
+            <div style="font-size: 0.95rem; font-weight: 600; color: var(--admin-gray-900); margin-top: 0.2rem;" id="detail-mbr-email">-</div>
+          </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
+          <div style="background: var(--admin-gray-50); border: 1px solid var(--admin-gray-200); padding: 0.85rem; border-radius: var(--admin-radius-sm);">
+            <div style="font-size: 0.75rem; color: var(--admin-gray-400); font-weight: 600; text-transform: uppercase;">Tanggal Lahir</div>
+            <div style="font-size: 0.9rem; font-weight: 600; color: var(--admin-gray-900); margin-top: 0.2rem;" id="detail-mbr-dob">-</div>
+          </div>
+          <div style="background: var(--admin-gray-50); border: 1px solid var(--admin-gray-200); padding: 0.85rem; border-radius: var(--admin-radius-sm);">
+            <div style="font-size: 0.75rem; color: var(--admin-gray-400); font-weight: 600; text-transform: uppercase;">Domisili / Wilayah</div>
+            <div style="font-size: 0.9rem; font-weight: 600; color: var(--admin-gray-900); margin-top: 0.2rem;" id="detail-mbr-city">-</div>
+          </div>
+        </div>
+
+        <div style="background: var(--admin-gray-50); border: 1px solid var(--admin-gray-200); padding: 0.85rem; border-radius: var(--admin-radius-sm); margin-bottom: 1rem;">
+          <div style="font-size: 0.75rem; color: var(--admin-gray-400); font-weight: 600; text-transform: uppercase;">Alamat Lengkap / Kompleks</div>
+          <div style="font-size: 0.875rem; color: var(--admin-gray-800); margin-top: 0.2rem;" id="detail-mbr-address">-</div>
+        </div>
+
+        <div style="background: var(--admin-gray-50); border: 1px solid var(--admin-gray-200); padding: 0.85rem; border-radius: var(--admin-radius-sm); margin-bottom: 1rem;">
+          <div style="font-size: 0.75rem; color: var(--admin-gray-400); font-weight: 600; text-transform: uppercase;">Minat Kategori Furnitur</div>
+          <div style="font-size: 0.95rem; font-weight: 700; color: var(--admin-blue-primary); margin-top: 0.2rem;" id="detail-mbr-category">-</div>
+        </div>
+
+        <div style="background: var(--admin-gray-50); border: 1px solid var(--admin-gray-200); padding: 0.85rem; border-radius: var(--admin-radius-sm); margin-bottom: 1rem;">
+          <div style="font-size: 0.75rem; color: var(--admin-gray-400); font-weight: 600; text-transform: uppercase;">Catatan Kebutuhan Pelanggan</div>
+          <div style="font-size: 0.875rem; color: var(--admin-gray-700); margin-top: 0.2rem;" id="detail-mbr-notes">-</div>
+        </div>
+
+        <div style="font-size: 0.75rem; color: var(--admin-gray-400); text-align: right;">
+          Terdaftar pada: <span id="detail-mbr-date">-</span>
+        </div>
+      </div>
+
+      <div style="display: flex; justify-content: flex-end; gap: 0.75rem; border-top: 1px solid var(--admin-gray-200); padding-top: 1rem;">
+        <button type="button" class="btn-adm btn-adm-outline" id="btn-close-detail-modal">Tutup</button>
+        <a href="#" target="_blank" rel="noopener noreferrer" class="btn-adm btn-adm-primary" id="btn-chat-member-wa" style="text-decoration: none;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+          <span>Chat WhatsApp Member</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: TAMBAH MEMBER MANUAL (ADMIN) -->
+  <div class="admin-modal-overlay" id="add-member-modal-overlay">
+    <div class="admin-modal-card">
+      <div class="modal-header-row">
+        <h3 class="modal-title-text">Tambah Member Manual</h3>
+        <button type="button" class="modal-close-btn" id="btn-close-add-member" aria-label="Tutup">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+      </div>
+
+      <form id="form-admin-add-member">
+        <div class="form-group">
+          <label class="form-label" for="adm-mbr-name">Nama Lengkap Member:</label>
+          <input type="text" id="adm-mbr-name" class="form-input" required placeholder="Contoh: Andi Muhammad Farhan">
+        </div>
+
+        <div class="form-row-2">
+          <div class="form-group">
+            <label class="form-label" for="adm-mbr-wa">Nomor WhatsApp:</label>
+            <input type="tel" id="adm-mbr-wa" class="form-input" required placeholder="08xxxxxxxxxx">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="adm-mbr-email">Alamat Email:</label>
+            <input type="email" id="adm-mbr-email" class="form-input" placeholder="contoh@gmail.com">
+          </div>
+        </div>
+
+        <div class="form-row-2">
+          <div class="form-group">
+            <label class="form-label" for="adm-mbr-dob">Tanggal Lahir:</label>
+            <input type="date" id="adm-mbr-dob" class="form-input">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="adm-mbr-city">Domisili / Kecamatan:</label>
+            <input type="text" id="adm-mbr-city" class="form-input" placeholder="Misal: Makassar (Rappocini)">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="adm-mbr-address">Alamat Lengkap / Kompleks:</label>
+          <input type="text" id="adm-mbr-address" class="form-input" placeholder="Nama jalan / kompleks rumah">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="adm-mbr-category">Minat Kategori:</label>
+          <select id="adm-mbr-category" class="form-select">
+            <option value="Sofa & Ruang Tamu">Sofa & Ruang Tamu</option>
+            <option value="Set Meja Makan">Set Meja Makan</option>
+            <option value="Tempat Tidur">Tempat Tidur & Kamar</option>
+            <option value="Credenza & Lemari">Credenza & Lemari</option>
+            <option value="Interior Seluruh Rumah">Interior Seluruh Rumah</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="adm-mbr-notes">Catatan Tambahan:</label>
+          <textarea id="adm-mbr-notes" class="form-textarea" placeholder="Preferensi warna sofa, ukuran ruangan, dll."></textarea>
+        </div>
+
+        <div style="display: flex; justify-content: flex-end; gap: 0.75rem; margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid var(--admin-gray-200);">
+          <button type="button" class="btn-adm btn-adm-outline" id="btn-cancel-add-member">Batal</button>
+          <button type="submit" class="btn-adm btn-adm-primary">Simpan Member Baru</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION -->
+  <div class="toast-notice" id="admin-toast">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f8c320" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+    <span id="toast-message">Data berhasil disimpan!</span>
+  </div>
+
+  <script src="admin.js"></script>
+</body>
+</html>

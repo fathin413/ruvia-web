@@ -1,0 +1,179 @@
+{
+  "hero": {
+    "badge": "Showroom Furnitur Kekinian & Sofa Minimalis • Makassar",
+    "headlinePrefix": "Pusat Furnitur Kekinian & ",
+    "headlineHighlight": "Sofa Minimalis Estetik",
+    "headlineSuffix": " untuk Hunian Modern Anda",
+    "subtext": "ruvia menghadirkan koleksi sofa minimalis dan furnitur kekinian berstandar estetik tinggi di Makassar. Mulai dari sofa lengkung kontemporer, model Japandi, hingga set ruang tamu yang bikin rumah terasa lega, elegan, dan nyaman setiap hari tanpa perlu bayar mahal.",
+    "pills": [
+      {
+        "title": "Sofa Minimalis Modern",
+        "desc": "Desain Clean & Estetik Hunian"
+      },
+      {
+        "title": "Furnitur Kekinian",
+        "desc": "Tren Ruang Tamu Kontemporer"
+      },
+      {
+        "title": "Kenyamanan Maksimal",
+        "desc": "Busa Empuk & Awet Bergaransi"
+      }
+    ]
+  },
+  "promo": {
+    "active": true,
+    "topBadge": "Promo Eksklusif Member • Kuota Terbatas",
+    "titlePrefix": "Spesial Member: ",
+    "titleHighlight": "Potongan Harga Eksklusif",
+    "visualBadgeTag": "Flash Event Member",
+    "visualDiscountNum": "Diskon Spesial Member",
+    "desc": "Daftar Member GRATIS sekarang dan nikmati potongan harga eksklusif untuk koleksi lemari, rak dapur, dan credenza. Kuota terbatas untuk 20 pendaftar pertama!",
+    "urgency": "Kuota diskon khusus 20 pendaftar pertama bulan ini!",
+    "perks": [
+      "Potongan Harga Eksklusif untuk 14 koleksi promo pilihan",
+      "Gratis Antar & Rakit Rapi ke seluruh area Makassar",
+      "Member Digital Instan 100% gratis tanpa biaya bulanan"
+    ],
+    "waText": "Halo ruvia Makassar, saya ingin daftar member gratis dan klaim harga promo eksklusif."
+  },
+  "storeInfo": {
+    "brandName": "Ruvia Furniture",
+    "city": "Makassar",
+    "whatsapp": "628114500888",
+    "whatsappDisplay": "+62 811-4500-888",
+    "address": "Jl. Gunung Latimojong No.78, Lariang Bangi, Kec. Makassar, Kota Makassar, Sulawesi Selatan 90224",
+    "hours": "Setiap Hari: 08.00 - 18.00 WITA",
+    "googleMapsUrl": "https://share.google/Jd3qGqJP3vN8w0Hi9",
+    "email": "halo@ruviafurniture.com"
+  },
+  "products": [
+    {
+      "id": "aurelia",
+      "title": "Aurelia Curved Sofa",
+      "category": "Sofa & Ruang Tamu",
+      "categoryKey": "living",
+      "image": "assets/images/catalog-sofa.jpg",
+      "priceEstimate": "Mulai Rp 3.800.000",
+      "badge": "Bestseller Kekinian",
+      "desc": "Sofa lengkung minimalis kontemporer yang empuk dan estetik. Siluet lengkungnya memberikan kesan ruang tamu modern yang lega dan elegan, dengan busa high resilience bergaransi.",
+      "waText": "Halo ruvia Makassar, saya tertarik info harga dan pilihan warna untuk Aurelia Curved Sofa Minimalis.",
+      "specs": [
+        {
+          "label": "Gaya Desain",
+          "value": "Modern Minimalist / Curved Aesthetic"
+        },
+        {
+          "label": "Pilihan Formasi",
+          "value": "2-Seater, 3-Seater, atau Modular L-Shape"
+        },
+        {
+          "label": "Pilihan Bahan & Warna",
+          "value": "100+ Pilihan (Bouclé, Velvet, Linen, Kulit Sintetis)"
+        },
+        {
+          "label": "Kenyamanan Busa",
+          "value": "High Resilience Foam (Empuk, Anti Kempes)"
+        },
+        {
+          "label": "Rangka Utama",
+          "value": "Solid Wood Frame Anti Rayap"
+        },
+        {
+          "label": "Garansi",
+          "value": "Garansi Rangka & Busa"
+        }
+      ]
+    },
+    {
+      "id": "verona",
+      "title": "Verona Marble Dining Suite",
+      "category": "Set Meja Makan",
+      "categoryKey": "dining",
+      "image": "assets/images/catalog-dining.jpg",
+      "priceEstimate": "Mulai Rp 4.200.000",
+      "badge": "Desain Mewah Hemat",
+      "desc": "Set meja makan modern bernuansa minimalis elegan. Permukaan top motif marmer mewah berpadu kaki ramping modern dan kursi makan ergonomis empuk.",
+      "waText": "Halo ruvia Makassar, saya ingin tanya info harga untuk Verona Dining Suite.",
+      "specs": [
+        {
+          "label": "Pilihan Top Meja",
+          "value": "Motif Marmer Calacatta White / Black Marquina / Kayu"
+        },
+        {
+          "label": "Formasi Kursi",
+          "value": "Tersedia 4 Kursi, 6 Kursi, atau 8 Kursi"
+        },
+        {
+          "label": "Bahan Dudukan Kursi",
+          "value": "Bebas Pilih Warna & Bahan (Kain/Kulit Sintetis)"
+        },
+        {
+          "label": "Daya Beban",
+          "value": "Kuat & Teruji hingga 300+ kg"
+        },
+        {
+          "label": "Perawatan",
+          "value": "Mudah Dibersihkan & Tahan Noda Makanan"
+        }
+      ]
+    },
+    {
+      "id": "celeste",
+      "title": "Celeste Modern Bed Suite",
+      "category": "Tempat Tidur",
+      "categoryKey": "bedroom",
+      "image": "assets/images/catalog-bedroom.jpg",
+      "priceEstimate": "Mulai Rp 3.500.000",
+      "badge": "Favorit Kamar Utama",
+      "desc": "Dipan tempat tidur minimalis modern dengan sandaran headboard empuk berlapis material premium, memberikan kenyamanan beristirahat maksimal setiap malam.",
+      "waText": "Halo ruvia Makassar, saya ingin tanya harga dan ukuran untuk Celeste Bed Suite.",
+      "specs": [
+        {
+          "label": "Pilihan Ukuran",
+          "value": "Queen (160×200), King (180×200), Super King (200×200)"
+        },
+        {
+          "label": "Material Headboard",
+          "value": "Pilihan Bouclé, Linen, Velvet, atau Kulit Sintetis"
+        },
+        {
+          "label": "Rangka Dipan",
+          "value": "Struktur Solid Anti Goyang & Anti Bunyi"
+        },
+        {
+          "label": "Opsi Pelengkap",
+          "value": "Bisa Tambah Nakas Samping Senada"
+        }
+      ]
+    },
+    {
+      "id": "elysian",
+      "title": "Elysian Fluted Credenza",
+      "category": "Credenza & Lemari",
+      "categoryKey": "storage",
+      "image": "assets/images/catalog-credenza.jpg",
+      "priceEstimate": "Mulai Rp 2.400.000",
+      "badge": "Aksen Estetik",
+      "desc": "Credenza TV dan kabinet penyimpanan dengan aksen kisi kayu minimalis kekinian. Dilengkapi pintu mekanisme soft-close yang halus dan elegan.",
+      "waText": "Halo ruvia Makassar, saya ingin tanya harga untuk Elysian Fluted Credenza.",
+      "specs": [
+        {
+          "label": "Pilihan Panjang",
+          "value": "160 cm, 180 cm, 200 cm, hingga 240 cm"
+        },
+        {
+          "label": "Warna Finishing",
+          "value": "Natural Oak, Warm Walnut, Beige, atau Matte Black"
+        },
+        {
+          "label": "Mekanisme Pintu",
+          "value": "Soft-Close Hinges (Halus & Senyap)"
+        },
+        {
+          "label": "Fungsi",
+          "value": "Meja TV, Ruang Konsol Game & Penyimpanan Serbaguna"
+        }
+      ]
+    }
+  ]
+}
