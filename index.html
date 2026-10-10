@@ -324,24 +324,24 @@
         </div>
 
         <!-- Bento Grid Layout -->
-        <div style="display: grid; grid-template-columns: repeat(12, 1fr); gap: 1.25rem; grid-auto-rows: minmax(200px, auto);">
+        <div class="bento-grid">
           
           <!-- Bento Item 1: Foto Lebar Custom Warna (Span 8 Kolom) -->
-          <div class="bento-item" style="grid-column: span 8; position: relative; border-radius: 24px; overflow: hidden; background: #fff; border: 1.5px solid var(--border-subtle); box-shadow: var(--shadow-subtle); transition: transform 0.4s ease; min-height: 280px;" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform='translateY(0)'">
-            <img src="assets/images/about-custom-swatches.jpg" alt="Pilihan Warna Material Furnitur" loading="lazy" decoding="async" style="width: 100%; height: 100%; object-fit: cover; filter: brightness(0.85);">
-            <div style="position: absolute; bottom: 0; left: 0; right: 0; padding: 2rem; background: linear-gradient(to top, rgba(15,23,42,0.95), transparent);">
-              <div style="display: inline-flex; align-items: center; gap: 0.5rem; background: var(--yellow-primary); color: #0f172a; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; padding: 0.35rem 0.85rem; border-radius: 999px; margin-bottom: 0.75rem;">
+          <div class="bento-item bento-card-banner">
+            <img src="assets/images/about-custom-swatches.jpg" alt="Pilihan Warna Material Furnitur" loading="lazy" decoding="async" class="bento-bg-img">
+            <div class="bento-overlay">
+              <div class="bento-pill-badge">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><path d="m4.93 4.93 4.24 4.24"></path><path d="m14.83 9.17 4.24-4.24"></path></svg>
-                Warna & Material
+                <span>Warna &amp; Material</span>
               </div>
-              <h3 style="font-size: 1.65rem; font-weight: 800; color: #fff; margin-bottom: 0.35rem; line-height: 1.2;">Bebas Pilih Palet Warna Interior</h3>
-              <p style="color: rgba(255,255,255,0.85); font-size: 0.95rem; max-width: 80%;">Tersedia lebih dari 100+ sampel material mulai dari linen, bouclé hangat, hingga kulit sintetis mewah untuk sofa dan dudukan kursi Anda.</p>
+              <h3 class="bento-title">Bebas Pilih Palet Warna Interior</h3>
+              <p class="bento-desc">Tersedia lebih dari 100+ sampel material mulai dari linen, bouclé hangat, hingga kulit sintetis mewah untuk sofa dan dudukan kursi Anda.</p>
             </div>
           </div>
 
           <!-- Bento Item 2: Kotak Custom Ukuran (Span 4 Kolom) -->
-          <div class="bento-item" style="grid-column: span 4; background: linear-gradient(135deg, var(--blue-primary) 0%, var(--blue-night) 100%); border-radius: 24px; padding: 2.25rem 2rem; color: #fff; display: flex; flex-direction: column; justify-content: center; box-shadow: 0 15px 35px rgba(30,31,171,0.25); border: 1.5px solid rgba(255,255,255,0.1); position: relative; overflow: hidden; transition: transform 0.4s ease;" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform='translateY(0)'">
-            <svg style="position: absolute; top: -20px; right: -20px; opacity: 0.1; width: 150px; height: 150px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
+          <div class="bento-item bento-card-box" style="background: linear-gradient(135deg, var(--blue-primary) 0%, var(--blue-night) 100%); color: #fff; box-shadow: 0 15px 35px rgba(30,31,171,0.25); border: 1.5px solid rgba(255,255,255,0.1);">
+            <svg style="position: absolute; top: -20px; right: -20px; opacity: 0.1; width: 150px; height: 150px; pointer-events: none;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
             <div style="width: 48px; height: 48px; background: rgba(255,255,255,0.15); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.25rem; border: 1px solid rgba(255,255,255,0.3); color: var(--yellow-primary);">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="3" y="3" width="18" height="18" rx="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
             </div>
@@ -350,7 +350,7 @@
           </div>
 
           <!-- Bento Item 3: Kotak Kualitas Bergaransi (Span 4 Kolom) -->
-          <div class="bento-item" style="grid-column: span 4; background: var(--bg-card); border-radius: 24px; padding: 2.25rem 2rem; display: flex; flex-direction: column; justify-content: center; border: 1.5px solid var(--border-subtle); box-shadow: var(--shadow-subtle); transition: transform 0.4s ease;" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform='translateY(0)'">
+          <div class="bento-item bento-card-box" style="background: var(--bg-card); border: 1.5px solid var(--border-subtle); box-shadow: var(--shadow-subtle);">
             <div style="width: 48px; height: 48px; background: rgba(30,31,171,0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.25rem; color: var(--blue-primary); border: 1px solid rgba(30,31,171,0.2);">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
             </div>
@@ -359,15 +359,15 @@
           </div>
 
           <!-- Bento Item 4: Foto Lebar Jaminan Harga Pasti Murah (Span 8 Kolom - Highlight) -->
-          <div class="bento-item" style="grid-column: span 8; position: relative; border-radius: 24px; overflow: hidden; background: #fff; border: 1.5px solid var(--border-subtle); box-shadow: var(--shadow-subtle); transition: transform 0.4s ease; min-height: 280px;" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform='translateY(0)'">
-            <img src="assets/images/about-quality-value.jpg" alt="Jaminan Harga Pasti Murah Furnitur ruvia Makassar" loading="lazy" decoding="async" style="width: 100%; height: 100%; object-fit: cover; filter: brightness(0.82); object-position: center 70%;">
-            <div style="position: absolute; bottom: 0; left: 0; right: 0; padding: 2rem; background: linear-gradient(to top, rgba(15,23,42,0.95), transparent);">
-              <div style="display: inline-flex; align-items: center; gap: 0.5rem; background: var(--yellow-primary); color: #0f172a; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; padding: 0.35rem 0.85rem; border-radius: 999px; margin-bottom: 0.75rem;">
+          <div class="bento-item bento-card-banner">
+            <img src="assets/images/about-quality-value.jpg" alt="Jaminan Harga Pasti Murah Furnitur ruvia Makassar" loading="lazy" decoding="async" class="bento-bg-img" style="object-position: center 70%;">
+            <div class="bento-overlay">
+              <div class="bento-pill-badge">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
-                Pasti Murah &amp; Transparan
+                <span>Pasti Murah &amp; Transparan</span>
               </div>
-              <h3 style="font-size: 1.65rem; font-weight: 800; color: #fff; margin-bottom: 0.35rem; line-height: 1.2;">Jaminan Harga Pasti Murah Langsung</h3>
-              <p style="color: rgba(255,255,255,0.85); font-size: 0.95rem; max-width: 80%;">Kami memotong rantai distribusi panjang. Nikmati furnitur berstandar showroom mewah mall dengan penawaran harga langsung produsen yang paling hemat dan transparan di Makassar.</p>
+              <h3 class="bento-title">Jaminan Harga Pasti Murah Langsung</h3>
+              <p class="bento-desc">Kami memotong rantai distribusi panjang. Nikmati furnitur berstandar showroom mewah mall dengan penawaran harga langsung produsen yang paling hemat dan transparan di Makassar.</p>
             </div>
           </div>
           
@@ -375,7 +375,7 @@
 
         <!-- Tombol Aksi di Bawah Bento Grid -->
         <div style="text-align: center; margin-top: 3rem;">
-          <a href="https://wa.me/628114500888?text=Halo%20ruvia,%20saya%20mau%20konsultasi%20warna%20dan%20ukuran%20furnitur." target="_blank" class="btn btn-outline-blue" style="padding: 1rem 2.5rem; font-size: 0.95rem; border-width: 2px;">
+          <a href="https://wa.me/628114500888?text=Halo%20ruvia,%20saya%20mau%20konsultasi%20warna%20dan%20ukuran%20furnitur." target="_blank" class="btn btn-outline-blue btn-bento-cta">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
             <span>Konsultasikan Kebutuhan Anda Sekarang</span>
           </a>
@@ -494,7 +494,7 @@
 
         <!-- Tombol CTA ke Katalog Lengkap -->
         <div style="text-align: center; margin-top: 3rem;">
-          <a href="katalog.html" class="btn btn-primary" style="font-size: 0.95rem; padding: 0.95rem 2.5rem;">
+          <a href="katalog.html" class="btn btn-primary btn-catalog-cta">
             <span>Jelajahi Semua Koleksi di Katalog Lengkap</span>
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
               <line x1="5" y1="12" x2="19" y2="12"></line>

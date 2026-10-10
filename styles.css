@@ -173,17 +173,25 @@ button {
   text-align: center;
 }
 
-/* --- Modern Buttons --- */
+/* --- Modern Buttons: Single-Line & Anti-Wrap --- */
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.65rem;
-  padding: 0.85rem 2rem;
+  gap: 0.55rem;
+  padding: 0.85rem 1.85rem;
   font-size: 0.925rem;
   font-weight: 600;
   border-radius: var(--radius-pill);
   transition: var(--transition);
+  white-space: nowrap !important;
+  line-height: 1.2;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.btn svg {
+  flex-shrink: 0;
 }
 
 /* Primary Button: Royal Blue (Ruvia Signature) */
@@ -2540,6 +2548,83 @@ dialog.promo-modal {
   .spec-table {
     grid-template-columns: 1fr;
   }
+
+  /* --- Button Anti-Wrap & Dynamic Resizing di Mobile (≤768px) --- */
+  .btn,
+  .btn-primary,
+  .btn-blue,
+  .btn-outline-blue,
+  .btn-outline-white,
+  .btn-yellow,
+  .btn-yellow-full,
+  .btn-submit-member {
+    white-space: nowrap !important;
+    line-height: 1.2 !important;
+    font-size: clamp(0.74rem, 3.2vw, 0.85rem) !important;
+    padding: 0.68rem 1rem !important;
+    gap: 0.4rem !important;
+    box-sizing: border-box !important;
+    text-overflow: ellipsis;
+  }
+  .btn svg,
+  .btn-yellow-full svg {
+    width: 15px !important;
+    height: 15px !important;
+    flex-shrink: 0 !important;
+  }
+  .hero-actions .btn {
+    width: 100% !important;
+    font-size: clamp(0.74rem, 3.1vw, 0.84rem) !important;
+    padding: 0.72rem 0.75rem !important;
+    white-space: nowrap !important;
+  }
+  .promo-slider-actions {
+    width: 100% !important;
+    justify-content: space-between !important;
+  }
+  .promo-slider-actions .btn {
+    flex: 1 1 auto !important;
+    font-size: clamp(0.72rem, 3vw, 0.82rem) !important;
+    padding: 0.65rem 0.75rem !important;
+    white-space: nowrap !important;
+  }
+  .how-cta-row {
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+  .how-cta-row .btn {
+    width: 100% !important;
+    white-space: nowrap !important;
+    font-size: clamp(0.74rem, 3.2vw, 0.85rem) !important;
+    padding: 0.72rem 0.85rem !important;
+  }
+  .btn-bento-cta,
+  .btn-catalog-cta {
+    padding: 0.72rem 1.15rem !important;
+    font-size: clamp(0.75rem, 3.3vw, 0.85rem) !important;
+    white-space: nowrap !important;
+    max-width: 100% !important;
+  }
+  .card-footer {
+    gap: 0.4rem !important;
+  }
+  .btn-detail {
+    font-size: clamp(0.72rem, 2.9vw, 0.78rem) !important;
+    white-space: nowrap !important;
+    gap: 0.3rem !important;
+    padding: 0.5rem 0.75rem !important;
+  }
+  .btn-wa-inquire {
+    font-size: clamp(0.72rem, 2.9vw, 0.78rem) !important;
+    padding: 0.5rem 0.75rem !important;
+    white-space: nowrap !important;
+    gap: 0.3rem !important;
+  }
+  .btn-yellow-full {
+    font-size: clamp(0.72rem, 2.95vw, 0.8rem) !important;
+    padding: 0.6rem 0.65rem !important;
+    white-space: nowrap !important;
+  }
 }
 
 @media (max-width: 580px) {
@@ -2549,6 +2634,8 @@ dialog.promo-modal {
   }
   .hero-actions .btn {
     width: 100%;
+    font-size: clamp(0.72rem, 3vw, 0.82rem) !important;
+    padding: 0.68rem 0.65rem !important;
   }
   .footer-grid {
     grid-template-columns: 1fr;
@@ -2557,6 +2644,199 @@ dialog.promo-modal {
     flex-direction: column;
     gap: 0.85rem;
     text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .btn,
+  .btn-primary,
+  .btn-blue,
+  .btn-outline-blue,
+  .btn-outline-white,
+  .btn-yellow,
+  .btn-yellow-full,
+  .btn-submit-member {
+    font-size: clamp(0.7rem, 2.85vw, 0.78rem) !important;
+    padding: 0.62rem 0.75rem !important;
+    gap: 0.35rem !important;
+    white-space: nowrap !important;
+  }
+  .hero-actions .btn {
+    font-size: clamp(0.68rem, 2.75vw, 0.78rem) !important;
+    padding: 0.62rem 0.5rem !important;
+    white-space: nowrap !important;
+  }
+  .how-cta-row .btn {
+    font-size: clamp(0.68rem, 2.75vw, 0.78rem) !important;
+    padding: 0.65rem 0.6rem !important;
+    white-space: nowrap !important;
+  }
+  .btn-bento-cta,
+  .btn-catalog-cta {
+    font-size: clamp(0.7rem, 2.85vw, 0.8rem) !important;
+    padding: 0.65rem 0.85rem !important;
+    white-space: nowrap !important;
+  }
+  .btn-yellow-full {
+    font-size: clamp(0.68rem, 2.75vw, 0.76rem) !important;
+    padding: 0.55rem 0.5rem !important;
+    white-space: nowrap !important;
+  }
+}
+
+/* ==========================================================================
+   BENTO GRID STYLING & RESPONSIVE FIX (CUSTOM WARNA & JAMINAN HARGA)
+   ========================================================================== */
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 1.25rem;
+}
+
+.bento-item {
+  border-radius: 24px;
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.bento-item:hover {
+  transform: translateY(-4px);
+}
+
+.bento-card-banner {
+  grid-column: span 8;
+  min-height: 320px;
+  background: #0f172a;
+  border: 1.5px solid var(--border-subtle);
+  box-shadow: var(--shadow-subtle);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.bento-card-banner .bento-bg-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.85);
+  transition: transform 0.5s ease;
+}
+
+.bento-item:hover .bento-bg-img {
+  transform: scale(1.03);
+}
+
+.bento-card-banner .bento-overlay {
+  position: relative;
+  z-index: 2;
+  padding: 2.25rem 2rem 1.75rem;
+  background: linear-gradient(to top, rgba(15, 23, 42, 0.98) 0%, rgba(15, 23, 42, 0.7) 65%, transparent 100%);
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.bento-pill-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: var(--yellow-primary);
+  color: #0f172a;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 0.32rem 0.8rem;
+  border-radius: 999px;
+  width: fit-content;
+  margin-bottom: 0.45rem;
+  white-space: nowrap;
+}
+
+.bento-title {
+  font-size: 1.65rem;
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.25;
+  margin: 0 0 0.35rem 0;
+}
+
+.bento-desc {
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 0.95rem;
+  line-height: 1.55;
+  max-width: 85%;
+  margin: 0;
+}
+
+.bento-card-box {
+  grid-column: span 4;
+  padding: 2.25rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 260px;
+}
+
+.btn-bento-cta {
+  padding: 1rem 2.5rem;
+  font-size: 0.95rem;
+  border-width: 2px;
+  white-space: nowrap !important;
+}
+
+.btn-catalog-cta {
+  font-size: 0.95rem;
+  padding: 0.95rem 2.5rem;
+  white-space: nowrap !important;
+}
+
+@media (max-width: 960px) {
+  .bento-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+  .bento-card-banner,
+  .bento-card-box {
+    grid-column: span 1 !important;
+  }
+  /* KUNCI: Di layar tablet & mobile, berikan min-height tinggi (400px) agar bubble dan teks TIDAK TERTUTUPI frame */
+  .bento-card-banner {
+    min-height: 400px !important;
+  }
+  .bento-card-banner .bento-overlay {
+    padding: 1.35rem 1.25rem 1.35rem 1.25rem !important;
+    background: linear-gradient(to top, rgba(15, 23, 42, 0.98) 0%, rgba(15, 23, 42, 0.85) 75%, transparent 100%) !important;
+  }
+  .bento-title {
+    font-size: clamp(1.18rem, 4.4vw, 1.4rem) !important;
+    line-height: 1.25 !important;
+  }
+  .bento-desc {
+    font-size: 0.85rem !important;
+    max-width: 100% !important;
+    line-height: 1.5 !important;
+  }
+  .bento-pill-badge {
+    font-size: 0.7rem !important;
+    padding: 0.25rem 0.65rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .bento-card-banner {
+    min-height: 380px !important;
+  }
+  .bento-card-banner .bento-overlay {
+    padding: 1.15rem 1rem 1.15rem 1rem !important;
+  }
+  .bento-title {
+    font-size: 1.18rem !important;
+  }
+  .bento-desc {
+    font-size: 0.82rem !important;
   }
 }
 
