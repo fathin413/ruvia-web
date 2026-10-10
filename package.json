@@ -1,0 +1,23 @@
+{
+  "name": "ruvia-web",
+  "version": "1.0.0",
+  "description": "Website Resmi Showroom Furnitur Kekinian & Sofa Minimalis Modern Ruvia Makassar",
+  "main": "serve.js",
+  "type": "module",
+  "scripts": {
+    "start": "node serve.js",
+    "dev": "node serve.js"
+  },
+  "keywords": [
+    "furniture",
+    "ruvia",
+    "makassar",
+    "sofa",
+    "katalog"
+  ],
+  "author": "fathin413",
+  "license": "ISC",
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

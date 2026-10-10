@@ -378,8 +378,8 @@ const server = http.createServer(async (req, res) => {
     if (reqOrigin) {
       const isLocalhost = /^https?:\/\/(localhost|127\.0\.0\.1)(:\d+)?$/.test(reqOrigin);
       const isFileOrigin = reqOrigin === 'null';
-      const isExplicitAllowed = ALLOWED_ORIGIN && reqOrigin === ALLOWED_ORIGIN;
-      if (isExplicitAllowed || isLocalhost || isFileOrigin) {
+      const isSameHost = req.headers.host && reqOrigin.includes(req.headers.host);
+      if (isExplicitAllowed || isLocalhost || isFileOrigin || isSameHost) {
         res.setHeader('Access-Control-Allow-Origin', isFileOrigin ? '*' : reqOrigin);
         if (!isFileOrigin) {
           res.setHeader('Access-Control-Allow-Credentials', 'true');
@@ -965,7 +965,9 @@ const server = http.createServer(async (req, res) => {
   }
 });
 
-server.listen(PORT, () => {
-  console.log(`Ruvia server running at http://localhost:${PORT}`);
-  console.log(`Admin Dashboard available at http://localhost:${PORT}/admin`);
+const HOST = process.env.HOST || '0.0.0.0';
+server.listen(PORT, HOST, () => {
+  console.log(`Ruvia server running at http://${HOST === '0.0.0.0' ? 'localhost' : HOST}:${PORT}`);
+  console.log(`Admin Dashboard available at http://${HOST === '0.0.0.0' ? 'localhost' : HOST}:${PORT}/admin`);
 });
+
